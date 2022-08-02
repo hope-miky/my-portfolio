@@ -1,0 +1,20 @@
+
+
+
+.main-bg {
+    background-color: rgb(11,25,46)
+}
+
+.profile-img {
+    animation-duration: 1.5s;
+    animation-name: slidein;
+}
+
+.profile-img:hover {
+    transform: translateY(-10px);
+}
+
+.cover-img {
+    /* background-image: url('../images/python.jpeg'); */
+    background-size: contain;
+}

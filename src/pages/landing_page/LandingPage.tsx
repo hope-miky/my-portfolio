@@ -7,7 +7,7 @@ const someclass = `
 
 const LandingPageView = () => {
 
-    return <div className=" first-screen h-screen pb-36 flex flex-wrap w-screen flex-col justify-center" style={{'backgroundColor': 'rgb(11,25,46)'}}>
+    return <div className=" first-screen h-screen pb-36 flex flex-wrap flex-col justify-center" style={{'backgroundColor': 'rgb(11,25,46)'}}>
             
             <div className=" w-3/5 mx-auto">
                 <div className="font-mono text-xl ml-5 text-teal-400 my-2 land"> Hi :) I am </div>
