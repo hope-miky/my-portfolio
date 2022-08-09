@@ -12,9 +12,11 @@ function TitleNode( data: any ) {
 
     const company: INodeData = data.data
 
-  return <div className=' w-3/4 rounded-md flex flex-col p-3'>
+  return <div className=' rounded-md flex flex-col p-3'>
 
-        <button className=" mt-5 text-bold text-white font-sans text-xl"> <span className="text-teal-400 font-bold mr-2">011.</span> Wrok Experience </button>
+        <button className=" mt-5 text-bold text-white font-sans text-3xl underline underline-offset-4"> 
+            <span className="text-teal-400 font-bold mr-2">011.</span> Wrok Experience 
+        </button>
         <hr className='ml-4 mr-72 bg-teal-400' />
     
         {/* <Handle type="source" position={Position.Right} id="shandle" /> */}

@@ -10,6 +10,7 @@ import ReactFlow, {
   applyEdgeChanges,
   Edge,
   ControlButton,
+  Position,
 } from 'react-flow-renderer';
 import { MarkerType } from 'react-flow-renderer';
 import CompanyNode from './CompanyNode';
@@ -32,13 +33,14 @@ const WorkExperiencePage = () => {
             type: 'company',
             data: {
                 name: "Transfer Multisort Electronics",
+                position: Position.Right,
                 title: "TME Education Ambassador",
                 projects: [
                     'Gave more than 3500 student a hands on workshop on Electronics and Computer programming.',
                     'Worked on a drone project to be used for spraying pesticides on farms'
                 ]
             },
-            position: { x: 100, y: 1000 },
+            position: { x: 0, y: 200 },
         },  
 
         {
@@ -52,21 +54,35 @@ const WorkExperiencePage = () => {
                   'Worked on a drone project to be used for spraying pesticides on farms'
               ]
           },
-          position: { x: 700, y: 300 },
+          position: { x: 450, y: 700 },
       },  
       {
         id: '4',
         type: 'company',
         data: {
-            name: "Equity Bank Limited",
+            name: "Equity Bank Limited2",
+            position: Position.Left,
             title: "Mid-Level Backend Developer",
             projects: [
                 'Gave more than 3500 student a hands on workshop on Electronics and Computer programming.',
                 'Worked on a drone project to be used for spraying pesticides on farms'
             ]
         },
-        position: { x: 1300, y: 1000 },
+        position: { x: 1400, y: 200 },
     },  
+    {
+      id: '5',
+      type: 'company',
+      data: {
+          name: "Token Wave",
+          title: "Mid-Level Backend Developer",
+          projects: [
+              'Gave more than 3500 student a hands on workshop on Electronics and Computer programming.',
+              'Worked on a drone project to be used for spraying pesticides on farms'
+          ]
+      },
+      position: { x: 1200, y: 1000 },
+  },  
         
       ];
 
@@ -75,21 +91,28 @@ const WorkExperiencePage = () => {
           id: '1',
           source: '1',
           target: '2',
-          style: { stroke: '#f6ab6c', strokeWidth: 4 },
+          style: { stroke: '#5EEAD3', strokeWidth: 4 },
           animated: true,
         },
         {
           id: '2',
           source: '1',
           target: '3',
-          style: { stroke: '#f6ab6c', strokeWidth: 4 },
+          style: { stroke: '#5EEAD3', strokeWidth: 4 },
           animated: true,
         },
         {
           id: '3',
           source: '1',
           target: '4',
-          style: { stroke: '#f6ab6c', strokeWidth: 4 },
+          style: { stroke: '#5EEAD3', strokeWidth: 4 },
+          animated: true,
+        },
+        {
+          id: '4',
+          source: '1',
+          target: '5',
+          style: { stroke: '#5EEAD3', strokeWidth: 4 },
           animated: true,
         },
       ];
@@ -122,11 +145,13 @@ const WorkExperiencePage = () => {
                         onConnect={onConnect}
                         fitView={true}
                         nodeTypes={node_types}
-                        attributionPosition="top-center"
-                        className=' mx-24'
+                        attributionPosition="bottom-right"
+                        className=' mx-40'
                         zoomOnScroll={false}
+                        panOnScroll={false}
+                        
                         >
-                        <Background color="#aaa" size={1}  />
+                        <Background color="#aaa" size={0}  />
                     </ReactFlow>
         </div>
 
