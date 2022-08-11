@@ -91,28 +91,28 @@ const WorkExperiencePage = () => {
           id: '1',
           source: '1',
           target: '2',
-          style: { stroke: '#5EEAD3', strokeWidth: 4 },
+          style: { stroke: '#5EEAD3', strokeWidth: 10 },
           animated: true,
         },
         {
           id: '2',
           source: '1',
           target: '3',
-          style: { stroke: '#5EEAD3', strokeWidth: 4 },
+          style: { stroke: '#5EEAD3', strokeWidth: 10 },
           animated: true,
         },
         {
           id: '3',
           source: '1',
           target: '4',
-          style: { stroke: '#5EEAD3', strokeWidth: 4 },
+          style: { stroke: '#5EEAD3', strokeWidth: 10 },
           animated: true,
         },
         {
           id: '4',
           source: '1',
           target: '5',
-          style: { stroke: '#5EEAD3', strokeWidth: 4 },
+          style: { stroke: '#5EEAD3', strokeWidth: 10 },
           animated: true,
         },
       ];
@@ -136,7 +136,7 @@ const WorkExperiencePage = () => {
         [setEdges]
       );
 
-    return <div className=" first-screen h-screen flex pb-36 justify-center" style={{'backgroundColor': 'rgb(11,25,46)'}}>
+    return <div className=" first-screen h-screen flex  justify-center" style={{'backgroundColor': 'rgb(11,25,46)'}}>
                     <ReactFlow
                         nodes={nodes}
                         edges={edges}

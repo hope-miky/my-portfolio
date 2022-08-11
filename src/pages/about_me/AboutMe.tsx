@@ -5,9 +5,9 @@ import { withPrefix } from 'gatsby';
 
 const AboutMeView = () => {
 
-   return  <div className='main-bg h-screen flex '>
+   return  <div className=' main-bg flex pb-12'>
 
-                <div className="textflex flex-col flex-1 pl-24">
+                <div className="textflex flex-col flex-1 pl-24 ">
                         <button className=" mt-5 text-bold text-white font-sans text-xl mx-4 land2"> <span className="text-teal-400 font-bold mr-2">001.</span> About Me </button>
                         <hr className='ml-4 mr-72' />
                         <p className=' font-sans text-gray-200 my-4 ml-3 w-3/4 text-justify '>
