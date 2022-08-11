@@ -1,6 +1,6 @@
 import { Dialog, Transition } from '@headlessui/react'
-import { EyeIcon } from '@heroicons/react/solid'
-import React, { Fragment, useState } from 'react'
+import { EyeIcon } from '@heroicons/react/outline'
+import React, { Fragment, useEffect, useState } from 'react'
 
 const MyModal = ({ title, description} : any) => {
   let [isOpen, setIsOpen] = useState(false)
@@ -12,6 +12,8 @@ const MyModal = ({ title, description} : any) => {
   const openModal = () => {
     setIsOpen(true)
   }
+
+ 
 
   return <>
     

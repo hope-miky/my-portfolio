@@ -1,29 +1,5 @@
 
-.land {
-    animation-duration: 1.5s;
-    animation-delay: -400ms;
-    animation-name: slidein;
-}
-.land2 {
-    animation-duration: 1.5s;
-    animation-delay: -300ms;
-    animation-name: slidein;
-}
-.land3 {
-    animation-duration: 1.5s;
-    animation-delay: -200ms;
-    animation-name: slidein;
-}
-.land4 {
-    animation-duration: 1.5s;
-    animation-delay: -100ms;
-    animation-name: slidein;
-}
-.land5 {
-    animation-duration: 1.5s;
-    animation-delay: -10ms;
-    animation-name: slidein;
-}
+
 @keyframes slidein {
     from {
         transform: translateY(-50px);

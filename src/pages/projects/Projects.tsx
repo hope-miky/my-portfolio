@@ -1,6 +1,6 @@
 
 import { StaticImage } from 'gatsby-plugin-image'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { withPrefix } from 'gatsby';
 import projects, { IProject } from './project_data';
 import { FolderIcon, LinkIcon, EyeIcon } from '@heroicons/react/outline'
@@ -10,7 +10,15 @@ import MyModal from './ProjectDetails';
 
 const ProjectsView = () => {
 
-    
+    const main_project_class = "main2-bg lg:w-96 mx-3  my-4  hover:-translate-y-2 rounded-md bg-opacity-25 p-3"
+    const [scroll, setScroll] = useState(0)
+
+    useEffect(() => {
+        window.addEventListener('scroll', (event: any) => {
+          console.log(window.scrollY);
+          setScroll(window.scrollY)
+        });
+    }, [])
 
    return  <div className="main-bg py-3">
                 <div className="flex-col mx-12">
@@ -21,18 +29,15 @@ const ProjectsView = () => {
                             <hr className=' w-1/4 ' />
                         </div>
 
-                        
-                        
                         <div className="flex flex-wrap mt-3 lg:mx-44 ">
 
-                        {
+                        { scroll > 1500 &&
                             projects.map((project: IProject, idx: number) => {
-                                return <div key={idx} className="main2-bg lg:w-96 mx-3  my-4  hover:-translate-y-2 rounded-md bg-opacity-25 p-3">
+                                return <div key={idx} className={ scroll < 1850 ? main_project_class : main_project_class + ` project_land${idx % 3}`}>
                                         <div className="flex justify-between">
                                             <FolderIcon className="h-10 w-10 mx-2 text-teal-500 " />
                                             <div className="flex">
                                                 <LinkIcon className="h-6 w-6 mx-2 text-gray-400 hover:text-teal-400 hover:cursor-pointer " />
-                                                <FolderIcon className="h-6 w-6 mx-2 text-gray-400 hover:text-teal-400 hover:cursor-pointer " />
                                                 <MyModal title={project.name} description={project.details} />
                                             </div>
                                         </div>

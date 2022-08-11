@@ -4,7 +4,7 @@ import React from 'react'
 
 const NavBarView = () => {
 
-   return  <nav className="pt-2" style={{'backgroundColor': 'rgb(11,25,46)'}}>
+   return  <nav className="pt-2 main-bg" >
           <div className="max-w-8xl mx-12 px-2 sm:px-6 lg:px-8">
             <div className="relative flex items-center justify-between h-16">
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
