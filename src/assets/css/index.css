@@ -2,6 +2,7 @@
 
 
 .main-bg {
+    /* background-color: #26272F */
     background-color: rgb(11,25,46)
 }
 
@@ -74,4 +75,8 @@
     animation-duration: 1.5s;
     animation-delay: -10ms;
     animation-name: slidein;
+}
+
+.maxwidthlimit {
+    max-width: 1300px;
 }
