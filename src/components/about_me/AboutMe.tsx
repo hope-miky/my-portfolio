@@ -28,7 +28,7 @@ const AboutMeView = () => {
                                 </p>
                         </div>
                         <div className="flex-1  justify-center flex flex-col">
-                                <StaticImage className='ml-16 w-64 border border-teal-500 p-12 border-spacing-10 hover:bg-teal-900  ' src="../../assets/images/profile3.png" alt="A dinosaur" />
+                                <StaticImage className='ml-16 w-64 border-2 rounded-full border-teal-500 p-5   hover:-translate-y-3  ' src="../../assets/images/profile3.png" alt="A dinosaur" />
                         </div>
 
                 </div>
