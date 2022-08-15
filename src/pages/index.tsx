@@ -16,7 +16,7 @@ const IndexPage = () => {
 
 
 
-  return <div className="nonscroll" >
+  return <div className="" >
             <NavBarView />
             <LandingPageView />
             <AboutMeView />
