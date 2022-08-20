@@ -4,14 +4,8 @@ import AboutMeView from "../components/about_me/AboutMe"
 import LandingPageView from "../components/landing_page/LandingPage"
 import NavBarView from "../components/NavBar"
 import ProjectsView from "../components/projects/Projects"
+import ExperiencePageView from "../components/work/Experience"
 
-// import NavBarView from "../components/NavBar"
-// import LandingPageView from "./landing_page/LandingPage"
-// import '../assets/css/index.css'
-// import AboutMeView from "./about_me/AboutMe"
-// import ProjectsView from "./projects/Projects"
-
-// markup
 const IndexPage = () => {
 
 
@@ -20,6 +14,7 @@ const IndexPage = () => {
             <NavBarView />
             <LandingPageView />
             <AboutMeView />
+            <ExperiencePageView />
             <ProjectsView />
         </div>
   

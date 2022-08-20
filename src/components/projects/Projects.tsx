@@ -21,13 +21,15 @@ const ProjectsView = () => {
     }, [])
 
    return  <div className="main-bg py-3" id="projectspage">
-                <div className="flex-col align-middle mx-12">
-                        <div className="flex justify-center mb-2">
-                            <button className=" mt-5 text-bold text-white font-sans text-xl mx-4 land2"> <span className="text-teal-400 font-bold mr-2">100.</span> Projects I was a part of</button>
+                <div className="flex-col align-middle ">
+                        {/* <div className="flex justify-center mb-2">
+                            <button className=" mt-5 text-bold text-white font-sans text-5xl mx-4 land2"> <span className="text-teal-400 font-bold mr-2">100.</span> Projects I was a part of</button>
                         </div>
                         <div className="flex justify-center">
                             <hr className=' w-1/4 ' />
-                        </div>
+                        </div> */}
+                        <button className="mt-5 ml-12 text-bold text-white font-sans text-4xl sm:text-5xl land2"> <span className="text-teal-400 font-bold mr-2">011.</span> Projects </button>
+                        <hr className=' sm:w-1/2 w-5/6 sm:mt-2 sm:mb-12' />
 
                         <div className="flex justify-center">
                             <div className="flex maxwidthlimit flex-wrap mt-3 mx-auto  lg:mx-44 ">
