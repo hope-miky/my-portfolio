@@ -1,9 +1,12 @@
 
 
+html {
+	scroll-behavior: smooth;
+}
 
 .main-bg {
     /* background-color: #26272F */
-    background-color: rgb(11,25,46)
+    background-color: rgb(11,25,46),
 }
 
 body {

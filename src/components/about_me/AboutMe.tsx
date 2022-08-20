@@ -4,7 +4,7 @@ import React from 'react'
 
 const AboutMeView = () => {
 
-   return  <div className=' main-bg  w-screen'>
+   return  <div className=' main-bg sm:py-32 w-screen flex flex-col justify-center' id="aboutmepage">
                 <div className='flex flex-wrap maxwidthlimit mx-auto pb-24'>
 
                         <div className=" flex-col flex-1 w-full px-12 sm:px-40">

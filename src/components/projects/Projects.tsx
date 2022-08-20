@@ -20,7 +20,7 @@ const ProjectsView = () => {
         });
     }, [])
 
-   return  <div className="main-bg py-3">
+   return  <div className="main-bg py-3" id="projectspage">
                 <div className="flex-col align-middle mx-12">
                         <div className="flex justify-center mb-2">
                             <button className=" mt-5 text-bold text-white font-sans text-xl mx-4 land2"> <span className="text-teal-400 font-bold mr-2">100.</span> Projects I was a part of</button>
