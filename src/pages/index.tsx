@@ -6,13 +6,14 @@ import NavBarView from "../components/NavBar"
 import ProjectsView from "../components/projects/Projects"
 import ExperiencePageView from "../components/work/Experience"
 import ContactsPageView from "../components/contacts/contacts"
-
+import SEO from "../components/seo/seo"
 
 const IndexPage = () => {
 
 
 
   return <div className="" >
+            <SEO />
             <NavBarView />
             <LandingPageView />
             <AboutMeView />
