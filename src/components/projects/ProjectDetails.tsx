@@ -34,7 +34,7 @@ const MyModal = ({ title, description} : any) => {
           </Transition.Child>
 
           <div className="fixed inset-0 overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-4 text-center">
+            <div className="flex min-h-full items-center justify-center p-4 text-center ">
               <Transition.Child
                 as={Fragment}
                 enter="ease-out duration-300"
@@ -44,7 +44,7 @@ const MyModal = ({ title, description} : any) => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-2xl transform overflow-hidden rounded-2xl main-bg p-6 text-left align-middle shadow-md shadow-teal-50 transition-all">
+                <Dialog.Panel className="w-full max-w-2xl transform overflow-hidden rounded-2xl main-bg p-6 text-left align-middle shadow-md shadow-teal-50 transition-all main2-bg">
                   <Dialog.Title
                     as="h3"
                     className="text-lg font-medium leading-6 text-white"
@@ -52,7 +52,7 @@ const MyModal = ({ title, description} : any) => {
                     {title}
                   </Dialog.Title>
                   <div className="mt-2">
-                    <span className="text-md text-justify text-gray-500">
+                    <span className="text-md text-justify text-gray-300">
                         {description}
                     </span>
                   </div>
