@@ -28,7 +28,7 @@ const ProjectsView = () => {
                         <div className="flex justify-center">
                             <hr className=' w-1/4 ' />
                         </div> */}
-                        <button className="mt-5 ml-12 text-bold text-white font-sans text-4xl sm:text-5xl land2"> <span className="text-teal-400 font-bold mr-2">011.</span> Projects </button>
+                        <button className="mt-5 ml-12 text-bold text-white font-sans text-4xl sm:text-5xl font-bold uppercase land2"> <span className="text-teal-400 font-bold mr-2">011.</span> Projects </button>
                         <hr className=' sm:w-1/2 w-5/6 sm:mt-2 sm:mb-12' />
 
                         <div className="flex justify-center">

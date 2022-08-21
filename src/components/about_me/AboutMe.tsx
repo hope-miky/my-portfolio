@@ -6,7 +6,7 @@ const AboutMeView = () => {
 
    return  <div className=' main-bg sm:py-32 w-screen flex flex-col justify-center' id="aboutmepage">
 
-                <button className="mt-5 flex justify-start sm:ml-12 text-bold text-white font-sans text-4xl sm:text-5xl land2"> <span className="text-teal-400 font-bold mr-2">001.</span> About Me </button>
+                <button className="mt-5 flex justify-start sm:ml-12 text-bold text-white font-sans font-bold uppercase text-4xl sm:text-5xl land2"> <span className="text-teal-400 font-bold mr-2">001.</span> About Me </button>
                 <hr className=' sm:w-1/2 w-5/6 sm:mt-2 sm:mb-12' />
 
                 <div className='flex flex-wrap maxwidthlimit mx-auto pb-24'>
