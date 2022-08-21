@@ -14,7 +14,7 @@ const LandingPageView = () => {
                     I am a full-stack developer specializing in building customer focused web ( sometimes mobile ) applications. Currently, I’m focused on building USSD mobile banking and Fraud Management systems at Equity Bank Limited. 
                 </div>
                 <div className="land5"> 
-                    <button type="button" className="inline-flex items-center px-12 py-4 border border-teal-300 rounded-md shadow-sm text-sm font-medium text-white  hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">Contact me</button>
+                    <a href="#contactspage" type="button" className="inline-flex items-center px-12 py-4 border border-teal-300 rounded-md shadow-sm text-sm font-medium text-white  hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">Contact me</a>
                 </div>
             </div>
 
