@@ -6,7 +6,8 @@ export interface IProject {
     name: string,
     description: string,
     details: any,
-    frameworks: Array<string>
+    frameworks: Array<string>,
+    link?: string,
 }
 
 
@@ -53,13 +54,15 @@ const projects: Array<IProject> = [
         name: "TME EDU ARD V2",
         description: "User manual for TME Education Arduino board to give some information about how to use the board and to enable them to program the board from the app itself.",
         details: "",
-        frameworks: [ 'Flutter', 'C#']
+        frameworks: [ 'Flutter', 'C#'],
+        link: "https://github.com/Tesfamichael1074/TME-Education-Arduino-board-manual"
     },
     {
         name: "Tokenhead",
         description: "A crypto, NFT collection wallet tracking application which is connected to an API.",
         details: "",
-        frameworks: [ 'Flutter']
+        frameworks: [ 'Flutter'],
+        link: "https://tokenhead.io"
     },
     {
         name: "MidYaf",

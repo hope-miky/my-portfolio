@@ -14,6 +14,7 @@ const IndexPage = () => {
 
   return <div className="" >
             <SEO />
+            <div className="p bg-red-300 text-center font-mono text-sm font-bold"> Please note that my portfolio is still under development, for now :) </div>
             <NavBarView />
             <LandingPageView />
             <AboutMeView />

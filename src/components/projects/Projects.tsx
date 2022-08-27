@@ -3,15 +3,14 @@ import { StaticImage } from 'gatsby-plugin-image'
 import React, { useEffect, useState } from 'react'
 import { withPrefix } from 'gatsby';
 import projects, { IProject } from './project_data';
-import { FolderIcon, LinkIcon, EyeIcon } from '@heroicons/react/outline'
+import { FolderIcon, LinkIcon, LockClosedIcon } from '@heroicons/react/outline'
 import MyModal from './ProjectDetails';
 
 
 
 const ProjectsView = () => {
 
-    const main_project_class = ""
-    const [scroll, setScroll] = useState(0)
+    const [_, setScroll] = useState(0)
 
     useEffect(() => {
         window.addEventListener('scroll', (event: any) => {
@@ -22,12 +21,7 @@ const ProjectsView = () => {
 
    return  <div className="main-bg py-3" id="projectspage">
                 <div className="flex-col align-middle ">
-                        {/* <div className="flex justify-center mb-2">
-                            <button className=" mt-5 text-bold text-white font-sans text-5xl mx-4 land2"> <span className="text-teal-400 font-bold mr-2">100.</span> Projects I was a part of</button>
-                        </div>
-                        <div className="flex justify-center">
-                            <hr className=' w-1/4 ' />
-                        </div> */}
+                        
                         <button className="mt-5 ml-12 text-bold text-white font-sans text-4xl sm:text-5xl font-bold uppercase land2"> <span className="text-teal-400 font-bold mr-2">011.</span> Projects </button>
                         <hr className=' sm:w-1/2 w-5/6 sm:mt-2 sm:mb-12' />
 
@@ -39,7 +33,11 @@ const ProjectsView = () => {
                                                 <div className="flex justify-between">
                                                     <FolderIcon className="h-10 w-10 mx-2 text-teal-500 " />
                                                     <div className="flex">
-                                                        <LinkIcon className="h-6 w-6 mx-2 text-gray-400 hover:text-teal-400 hover:cursor-pointer " />
+                                                        {
+                                                            project.link ?
+                                                                <LinkIcon onClick={() => { window.open(project.link, '_blank'); }} className="h-6 w-6 mx-2 text-gray-400 hover:text-teal-400 hover:cursor-pointer " />
+                                                                : <LockClosedIcon className="h-6 w-6 mx-2 text-gray-400 hover:text-red-400 hover:cursor-pointer " />
+                                                        }
                                                         <MyModal title={project.name} description={project.details} />
                                                     </div>
                                                 </div>
