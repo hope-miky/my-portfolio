@@ -7,6 +7,7 @@ import ProjectsView from "../components/projects/Projects"
 import ExperiencePageView from "../components/work/Experience"
 import ContactsPageView from "../components/contacts/contacts"
 import SEO from "../components/seo/seo"
+import Skills from "../components/skills/Skills"
 
 const IndexPage = () => {
 
@@ -18,6 +19,7 @@ const IndexPage = () => {
             <LandingPageView />
             <AboutMeView />
             <ExperiencePageView />
+            <Skills />
             <ProjectsView />
             <ContactsPageView />
         </div>

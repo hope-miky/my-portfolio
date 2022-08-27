@@ -20,7 +20,7 @@ const ContactsPageView = () => {
                 </div>
 
                 <div className="flex flex-col justify-center sm:w-1/3 mx-5 ">
-                    <div className=" text-center mb-5 text-2xl text-gray-400 land5"> I am not actively looking for a new role but I am always open for discussion :) </div>
+                    <div className=" text-center mb-5 text-xl text-gray-400 font-thin land5"> I am not actively looking for a new role but I am always open for discussion :) </div>
                     <div className="flex justify-center">
                         <SocialIcon className="mx-3 hover:-translate-y-1 land5" url="https://www.linkedin.com/in/tesfamichael-molla-989236171/" fgColor="white"/>
                         <SocialIcon className="mx-3 hover:-translate-y-1 land5" url="https://github.com/Tesfamichael1074" bgColor="white" />
