@@ -5,7 +5,7 @@ import React from "react"
 export interface IProject {
     name: string,
     description: string,
-    details: any,
+    details?: any,
     frameworks: Array<string>,
     link?: string,
 }
@@ -53,22 +53,38 @@ const projects: Array<IProject> = [
     {
         name: "TME EDU ARD V2",
         description: "User manual for TME Education Arduino board to give some information about how to use the board and to enable them to program the board from the app itself.",
-        details: "",
-        frameworks: [ 'Flutter', 'C#'],
+        details: <> This was a project I was experimenting in while I was working as an ambassador for TME. I was a mobile application to teach our clients/students 
+        about our product. I has all the content of the user manual in an interactive way but the two big feature I did on this app was one, to enable our students to
+        <span className="text-teal-300"> program their Arduino board from the mobile application itself.</span> There were plenty of code samples in the app the students can experiment in. and the second one is 
+        for students to be able to follow up our <span className="text-teal-300">YouTube channel and video tutorials from app.</span> I finished this project as a side project and published the V1 to PlayStore  
+        V2 was not published because of some Privacy and access issues since the app includes sending compiled binary files through USB ports, but the code is available 
+        in my GitHub profile.</>,
+        frameworks: [ 'Flutter', 'C#', 'Java'],
         link: "https://github.com/Tesfamichael1074/TME-Education-Arduino-board-manual"
     },
     {
         name: "Tokenhead",
         description: "A crypto, NFT collection wallet tracking application which is connected to an API.",
-        details: "",
+        details: <> My second and last freelance project on UpWork. I was able to work on this very interesting project, specifically on updating the mobile app UI to a new pre-designed version.
+        This project helped me understand a lot of Dart specific functionalities, also it was one of the cleanest codes I have ever seen {'( Really appreciate the previous developers )'}.</>,
         frameworks: [ 'Flutter'],
         link: "https://tokenhead.io"
     },
     {
         name: "MidYaf",
         description: "Real-time hostess and cleaning service booking system made using Flutter for mobile and Laravel for the backend.",
-        details: "",
         frameworks: [ 'Flutter']
+    },
+    {
+        name: "AddisOCR",
+        description: "Hand writing recognition desktop application for our local language Amharic (Ethiopia), It accepts images and returns the text/translate to any language",
+        frameworks: [ 'Python', 'PyQt', 'Tesseract']
+    },
+    {
+        name: "Flutter-Ecom",
+        description: "Open source mobile application UI for e-commerce platforms",
+        details: <>A side project of mine when I was a working on Flutter projects as a freelancer. I was planning to deliver the project for all device like Desktop and Web but did get the time to push it.</>,
+        frameworks: [ 'Flutter' ]
     },
 
 
