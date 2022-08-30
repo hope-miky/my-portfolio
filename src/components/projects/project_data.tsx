@@ -86,7 +86,7 @@ const projects: Array<IProject> = [
         description: "Open source mobile application UI for e-commerce platforms",
         details: <>A side project of mine when I was a working on Flutter projects as a freelancer. I was planning to deliver the project for all device like Desktop and Web but did get the time to push it.</>,
         frameworks: [ 'Flutter' ],
-        link: "https://github.com/Tesfamichael1074/Flutter-Ecoms"
+        link: "https://github.com/Tesfamichael1074/Flutter-Ecom"
     },
 
 
