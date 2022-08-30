@@ -78,13 +78,15 @@ const projects: Array<IProject> = [
     {
         name: "AddisOCR",
         description: "Hand writing recognition desktop application for our local language Amharic (Ethiopia), It accepts images and returns the text/translate to any language",
-        frameworks: [ 'Python', 'PyQt', 'Tesseract']
+        frameworks: [ 'Python', 'PyQt', 'Tesseract', 'OpenCV'],
+        link: "https://github.com/Tesfamichael1074/AddisOCR"
     },
     {
         name: "Flutter-Ecom",
         description: "Open source mobile application UI for e-commerce platforms",
         details: <>A side project of mine when I was a working on Flutter projects as a freelancer. I was planning to deliver the project for all device like Desktop and Web but did get the time to push it.</>,
-        frameworks: [ 'Flutter' ]
+        frameworks: [ 'Flutter' ],
+        link: "https://github.com/Tesfamichael1074/Flutter-Ecoms"
     },
 
 
