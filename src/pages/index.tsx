@@ -14,8 +14,8 @@ const IndexPage = () => {
 
   return <div className="" >
             <Seo
-              title="Tesfamichael"
-              description="Tesfamichael's portfolio"
+              title="Tesfamichael Molla"
+              description="Hello, I am Tesfamichael Molla, BH Full-stack developer based in Poland."
               featuredImage= {
                 {
                   images: {
