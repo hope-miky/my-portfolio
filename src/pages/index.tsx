@@ -7,13 +7,29 @@ import ProjectsView from "../components/projects/Projects"
 import ExperiencePageView from "../components/work/Experience"
 import ContactsPageView from "../components/contacts/contacts"
 import SEO from "../components/seo/seo"
+import Seo from "../components/seo/seo2"
 
 const IndexPage = () => {
 
 
 
   return <div className="" >
-            <SEO />
+            {/* <SEO /> */}
+            <Seo
+              title="About page title"
+              description="About page description"
+              featuredImage= {
+                {
+                  images: {
+                      fallback: {
+                          src: "https://tesfamichael.dev/screen.png"
+                      },
+                  },
+                  width: 12,
+                  height: 21,
+              }
+              }
+            />
             <div className="p bg-red-300 text-center font-mono text-sm font-bold"> Please note that my portfolio is still under development, for now :) </div>
             <NavBarView />
             <LandingPageView />
