@@ -6,16 +6,16 @@ import NavBarView from "../components/NavBar"
 import ProjectsView from "../components/projects/Projects"
 import ExperiencePageView from "../components/work/Experience"
 import ContactsPageView from "../components/contacts/contacts"
-import SEO from "../components/seo/SEO"
+import Seo from "../components/seo/SEO"
 
 const IndexPage = () => {
 
 
 
   return <div className="" >
-            <SEO
+            <Seo
               title="Tesfamichael"
-              description="Tesfamichael's portfolio website."
+              description="Tesfamichael's portfolio"
               featuredImage= {
                 {
                   images: {
@@ -23,8 +23,8 @@ const IndexPage = () => {
                           src: "https://tesfamichael.dev/screen.png"
                       },
                   },
-                  width: 120,
-                  height: 210,
+                  width: 12,
+                  height: 21,
               }
               }
             />

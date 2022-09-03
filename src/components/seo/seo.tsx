@@ -32,7 +32,7 @@ export type SeoProps = {
    */
   featuredImage?: ImageDataType;
 };
-export default function SEO(props: SeoProps) {
+export default function Seo(props: SeoProps) {
   // first get our default data from gatsby config and default featured image
   const { site, featuredImage } =
     useStaticQuery<any>(graphql`
