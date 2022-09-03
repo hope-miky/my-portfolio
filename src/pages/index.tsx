@@ -6,18 +6,16 @@ import NavBarView from "../components/NavBar"
 import ProjectsView from "../components/projects/Projects"
 import ExperiencePageView from "../components/work/Experience"
 import ContactsPageView from "../components/contacts/contacts"
-import SEO from "../components/seo/seo"
-import Seo from "../components/seo/seo2"
+import SEO from "../components/seo/SEO"
 
 const IndexPage = () => {
 
 
 
   return <div className="" >
-            {/* <SEO /> */}
-            <Seo
-              title="About page title"
-              description="About page description"
+            <SEO
+              title="Tesfamichael"
+              description="Tesfamichael's portfolio website."
               featuredImage= {
                 {
                   images: {
@@ -25,12 +23,12 @@ const IndexPage = () => {
                           src: "https://tesfamichael.dev/screen.png"
                       },
                   },
-                  width: 12,
-                  height: 21,
+                  width: 120,
+                  height: 210,
               }
               }
             />
-            <div className="p bg-red-300 text-center font-mono text-sm font-bold"> Please note that my portfolio is still under development, for now :) </div>
+            {/* <div className="p bg-red-300 text-center font-mono text-sm font-bold"> Please note that my portfolio is still under development, for now :) </div> */}
             <NavBarView />
             <LandingPageView />
             <AboutMeView />
