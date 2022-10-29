@@ -4,7 +4,7 @@ import React from 'react'
 
 const AboutMeView = () => {
 
-   return  <div className=' main-bg sm:py-32 w-screen flex flex-col justify-center' id="aboutmepage">
+   return  <div className=' main-bg sm:py-32 w-screen flex flex-col justify-center sect' id="aboutmepage">
 
                 <button className="mt-5 flex justify-start sm:ml-12 text-bold text-white font-sans font-bold uppercase text-4xl sm:text-5xl land2"> <span className="text-teal-400 font-bold mr-2">001.</span> About Me </button>
                 <hr className=' sm:w-1/2 w-5/6 sm:mt-2 sm:mb-12' />
@@ -12,8 +12,7 @@ const AboutMeView = () => {
                 <div className='flex flex-wrap maxwidthlimit mx-auto pb-24'>
 
                         <div className=" flex-col flex-1 w-full px-12 sm:px-40">
-                                {/* <button className=" mt-5 text-bold text-white font-sans text-xl land2"> <span className="text-teal-400 font-bold mr-2">001.</span> About Me </button>
-                                <hr className=' mr-72' /> */}
+
                                 <p className=' font-sans text-gray-200 my-4  text-justify '>
                                         I am Tesfamichael Molla, Software Engineer based in Poland. I am born and raised in Woldiya, Ethiopia.
                                         I started my developer journey since highschool studying HTML and CSS and continued my BSc degree in 

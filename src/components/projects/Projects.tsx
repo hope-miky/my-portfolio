@@ -10,14 +10,14 @@ import MyModal from './ProjectDetails';
 
 const ProjectsView = () => {
 
-    const [_, setScroll] = useState(0)
+    // const [_, setScroll] = useState(0)
 
-    useEffect(() => {
-        window.addEventListener('scroll', (event: any) => {
-          console.log(window.scrollY);
-          setScroll(window.scrollY)
-        });
-    }, [])
+    // useEffect(() => {
+    //     window.addEventListener('scroll', (event: any) => {
+    //       console.log(window.scrollY);
+    //       setScroll(window.scrollY)
+    //     });
+    // }, [])
 
    return  <div className="main-bg py-3" id="projectspage">
                 <div className="flex-col align-middle ">
@@ -46,7 +46,7 @@ const ProjectsView = () => {
                                                     {project.description}
                                                 </p>
                                                 <p className=' flex justify-center mx-auto text-justify text-gray-400 text-sm font-mono w-5/6 mb-4'> 
-                                                    { project.frameworks.map((frame, idx) => <span className='mx-2'> {frame} </span>) }
+                                                    { project.frameworks.map((frame, idx) => <span key={idx} className='mx-2'> {frame} </span>) }
                                                 </p>
                                         </div>
                                     })

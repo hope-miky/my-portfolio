@@ -87,3 +87,14 @@ body {
 .maxwidthlimit {
     max-width: 1300px;
 }
+
+
+.cont {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+.sect {
+    scroll-snap-align: start;
+}

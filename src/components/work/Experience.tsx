@@ -3,7 +3,7 @@ import work_data from "./work_data"
 
 const ExperiencePageView = () => {
 
-    return <div className=" first-screen sm:h-screen pb-36  main-bg" id="experiencepage" >
+    return <div className=" first-screen sm:h-screen pb-36  main-bg sect" id="experiencepage" >
             
             <button className="mt-5 ml-12 text-bold text-white font-sans text-4xl font-bold uppercase sm:text-5xl land2"> <span className="text-teal-400 font-bold mr-2">010.</span> Experience </button>
             <hr className=' sm:w-1/2 w-5/6 sm:mt-2' />

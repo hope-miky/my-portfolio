@@ -1,13 +1,21 @@
-import React from "react"
+import React, {useEffect, useState} from "react"
 import './sample.css'
 
 
 const LandingPageView = () => {
+//   const [scroll, setScroll] = useState(0)
 
-    return <div className=" first-screen h-screen pb-36 flex flex-wrap flex-col justify-center main-bg" >
+//     useEffect(() => {
+//         window.addEventListener('scroll', (event: any) => {
+//           console.log(window.scrollY);
+//           setScroll(window.scrollY)
+//         });
+//     }, [])
+
+    return <div className=" first-screen h-screen pb-36 flex flex-wrap flex-col justify-center main-bg sect" >
             
             <div className=" w-4/5 sm:w-3/5 mx-auto">
-                <div className="font-mono sm:text-xl sm:ml-5 text-teal-400 my-2 land"> Hi :) I am </div>
+                <div className={`font-mono sm:text-xl sm:ml-5 text-teal-400 my-2`}> Hi :) I am </div>
                 <div className=" text-3xl sm:text-3xl md:text-5xl lg:text-7xl font-bold font-sans text-gray-200 md:my-1 land2"> Tesfamichael Molla </div>
                 <div className="text-2xl lg:text-7xl md:text-4xl sm:text-3xl text-gray-400 font-sans font-bold my-4 land3 md:my-1"> I build things for the web! </div>
                 <div className=" text-xs sm:text-xs md:text-sm lg:text-lg text-gray-400 sm:w-3/5 font-thin font-mono my-4 land4"> 
