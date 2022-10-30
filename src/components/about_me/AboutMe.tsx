@@ -19,7 +19,7 @@ const AboutMeView = ({scroll_value}: any) => {
           },
         }));
 
-        if (scroll_value > 570) {
+        if (scroll_value > 600 && scroll_value < 1200) {
           api.start({
             to: {
               opacity: 1,
