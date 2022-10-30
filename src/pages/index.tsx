@@ -21,16 +21,18 @@ const IndexPage = () => {
         
     }, [])
 
-    const handleScroll = (e: any) => {
-      const bottom = e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight;
-      if (bottom) { 
-        console.log("reached bottom");
-       }
-    }
+    // const handleScroll = (e: any) => {
+    //   // const bottom = e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight;
+    //   // if (bottom) { 
+    //   //   console.log("reached bottom");
+    //   //  }
+    //   console.log(window.scrollY);
+    // setScroll(window.scrollY)
+    // }
 
 
 
-  return <div className="" onScroll={handleScroll}>
+  return <div className="" >
             <Seo
               title="Tesfamichael Molla"
               description="Hello, I am Tesfamichael Molla, BH Full-stack developer based in Poland."
@@ -50,20 +52,44 @@ const IndexPage = () => {
             {/* <div className="p bg-red-300 text-center font-mono text-sm font-bold"> Please note that my portfolio is still under development, for now :) </div> */}
             <NavBarView />
             <div className=" fixed z-0">
-              <LandingPageView scroll_value={scroll_value} />
+                <LandingPageView scroll_value={scroll_value} />
             </div>
 
-            <div className="fixed">
-              <AboutMeView scroll_value={scroll_value} />
-            </div>
+            {
+              scroll_value > 400 && 
+              <div className="fixed z-10">
+                    <AboutMeView scroll_value={scroll_value} />
+              </div>
+            }
+
+            {
+              scroll_value > 800 &&
+              <div className="fixed z-20">
+                  <ExperiencePageView scroll_value={scroll_value} />
+              </div>
+            }
+
+            {
+                scroll_value > 1800 &&
+                <div className="fixed z-30">
+                  <ProjectsView scroll_value={scroll_value} />
+                </div>
+            }
+            
+
+              {
+                scroll_value > 3300 &&
+                  <ContactsPageView scroll_value={scroll_value} />
+              }
+
+            
 
             <div className="absolute  w-screen -z-10" style={{ height: 6000}}>
 
             </div>
             
-            {/* <ExperiencePageView />
-            <ProjectsView />
-            <ContactsPageView /> */}
+            {/* 
+             */}
         </div>
   
 }
