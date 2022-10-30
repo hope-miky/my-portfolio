@@ -1,19 +1,80 @@
 
 import { StaticImage } from 'gatsby-plugin-image'
 import React from 'react'
+import { animated, useSpring } from '@react-spring/web'
+import CircularImagesComponent from './CircularImages';
 
-const AboutMeView = () => {
+const AboutMeView = ({scroll_value}: any) => {
 
-   return  <div className=' main-bg sm:py-32 w-screen flex flex-col justify-center' id="aboutmepage">
+        const [springs, api] = useSpring(() => ({
+          from: {
+            opacity: 0,
+            y: -100,
+          },
+        }));
+        const [second_springs, second_api] = useSpring(() => ({
+          from: {
+            opacity: 0,
+            y: -100,
+          },
+        }));
+
+        if (scroll_value > 570) {
+          api.start({
+            to: {
+              opacity: 1,
+              y: 0,
+            },
+          });
+
+          second_api.start({
+                to: {
+                  opacity: 1,
+                  y: 0,
+                },
+                delay: 200,
+              });
+        } else {
+          api.start({
+            to: {
+              opacity: 0,
+              y: -100,
+            },
+            delay: 300
+          });
+          second_api.start({
+                to: {
+                  opacity: 0,
+                  y: -100,
+                },
+              });
+        }
+        
+
+
+   return  <div className=' main-bg sm:py-32 md:py-0 w-screen flex flex-col justify-start md:h-screen' id="aboutmepage">
+
+
+        <animated.div
+                style={{
+                        ...springs,
+                }}
+                >
 
                 <button className="mt-5 flex justify-start sm:ml-12 text-bold text-white font-sans font-bold uppercase text-4xl sm:text-5xl land2"> <span className="text-teal-400 font-bold mr-2">001.</span> About Me </button>
                 <hr className=' sm:w-1/2 w-5/6 sm:mt-2 sm:mb-12' />
+        </animated.div>
 
-                <div className='flex flex-wrap maxwidthlimit mx-auto pb-24'>
+        <animated.div
+                style={{
+                        ...second_springs,
+                }}
+                >
+
+                        <div className='flex flex-wrap maxwidthlimit mx-auto pb-24'>
 
                         <div className=" flex-col flex-1 w-full px-12 sm:px-40">
-                                {/* <button className=" mt-5 text-bold text-white font-sans text-xl land2"> <span className="text-teal-400 font-bold mr-2">001.</span> About Me </button>
-                                <hr className=' mr-72' /> */}
+
                                 <p className=' font-sans text-gray-200 my-4  text-justify '>
                                         I am Tesfamichael Molla, Software Engineer based in Poland. I am born and raised in Woldiya, Ethiopia.
                                         I started my developer journey since highschool studying HTML and CSS and continued my BSc degree in 
@@ -31,11 +92,16 @@ const AboutMeView = () => {
                                         for one of the fastest growing bank in Africa, Equity Bank Limited.
                                 </p>
                         </div>
-                        <div className="flex-1 flex flex-col justify-center h-96 my-auto ">
-                                <StaticImage className='ml-16 w-64 border-2 rounded-full border-teal-500 p-5   hover:-translate-y-3  ' src="../../assets/images/profile3.png" alt="A dinosaur" />
+                        <div className="flex-1 flex flex-col justify-center my-auto ">
+                            
+                        <CircularImagesComponent />
+                        <StaticImage className='ml-24 mt-24 w-64 border-2 rounded-full border-teal-500 p-5 absolute ' src="../../assets/images/profile.jpeg" alt="A dinosaur" />
+
                         </div>
 
-                </div>
+                        </div>
+        </animated.div>
+       
    </div>
 }
 

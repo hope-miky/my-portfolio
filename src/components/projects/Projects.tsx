@@ -10,14 +10,6 @@ import MyModal from './ProjectDetails';
 
 const ProjectsView = () => {
 
-    const [_, setScroll] = useState(0)
-
-    useEffect(() => {
-        window.addEventListener('scroll', (event: any) => {
-          console.log(window.scrollY);
-          setScroll(window.scrollY)
-        });
-    }, [])
 
    return  <div className="main-bg py-3" id="projectspage">
                 <div className="flex-col align-middle ">
