@@ -13,8 +13,6 @@ const MyModal = ({ title, description} : any) => {
     setIsOpen(true)
   }
 
- 
-
   return <>
         {
           description && <EyeIcon onClick={openModal} className="h-6 w-6 mx-2 text-gray-400 hover:text-teal-400 hover:cursor-pointer " />

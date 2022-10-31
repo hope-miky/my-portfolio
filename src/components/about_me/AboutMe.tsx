@@ -71,9 +71,9 @@ const AboutMeView = ({scroll_value}: any) => {
                 }}
                 >
 
-                        <div className='flex flex-wrap maxwidthlimit mx-auto pb-24'>
+                        <div className='flex flex-wrap w-screen h-screen mx-auto pb-24 maxwidthlimit'>
 
-                        <div className=" flex-col flex-1 w-full px-12 sm:px-40">
+                        <div className=" flex-col flex-1 w-full px-12 sm:px-40 maxwidthlimit">
 
                                 <p className=' font-sans text-gray-200 my-4  text-justify '>
                                         I am Tesfamichael Molla, Software Engineer based in Poland. I am born and raised in Woldiya, Ethiopia.
@@ -92,11 +92,10 @@ const AboutMeView = ({scroll_value}: any) => {
                                         for one of the fastest growing bank in Africa, Equity Bank Limited.
                                 </p>
                         </div>
-                        <div className="flex-1 flex flex-col justify-center my-auto ">
-                            
-                        <CircularImagesComponent />
-                        <StaticImage className='ml-24 mt-24 w-64 border-2 rounded-full border-teal-500 p-5 absolute ' src="../../assets/images/profile.jpeg" alt="A dinosaur" />
-
+                        
+                        <div className="flex-1 flex flex-col justify-center my-auto  w-1/2 h-1/2 ">
+                            <CircularImagesComponent />
+                            <StaticImage className='ml-24 mt-24 w-64 border-2 rounded-full border-teal-500 p-5 absolute  ' src="../../assets/images/profile.jpeg" alt="A dinosaur" />
                         </div>
 
                         </div>
