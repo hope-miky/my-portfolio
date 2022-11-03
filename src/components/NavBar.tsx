@@ -2,9 +2,41 @@
 import React from 'react'
 import './navbar.css'
 import { MenuAlt4Icon } from '@heroicons/react/outline'
+import { animated, useSpring } from '@react-spring/web'
 
 
-const NavBarView = () => {
+const NavBarView = ( {setView} : any) => {
+
+  const [spring, api] = useSpring(() => ({
+    from: {
+        y: 0,
+        opacity: 1,
+    }
+}))
+
+  const animteText = () => {
+      api.start(() => ({
+        to: {
+            y: -20,
+            opacity: 0,
+        },
+    }));
+      api.start(() => ({
+        to: {
+            y: 40,
+            opacity: 0,
+        },
+        delay: 400
+    }));
+    api.start(() => ({
+      to: {
+          y: 0,
+          opacity: 1,
+      },
+      delay: 800
+  }));
+  
+  }
 
   const closeNav = () => {
     document.getElementById("mySidenav")!.style.width = "0";
@@ -22,14 +54,16 @@ const NavBarView = () => {
           <div className="max-w-8xl sm:mx-12 px-2 sm:px-6 lg:px-8">
 
             <div className="relative  items-center justify-between h-16 hidden sm:flex  ">
-              <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-                <div className=" text-teal-500 font-bold land2">@hope_miky</div>
+              <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start" >
+                <animated.div onMouseOver={() => animteText()} className=" text-teal-500 font-bold land2" style={{...spring}} >@hope_miky</animated.div>
               </div>
 
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <a href='#aboutmepage' className=" text-bold text-white font-sans text-sm mx-4 land2"> <span className="text-teal-400 font-bold mr-2">001.</span> About Me </a>
-                <a href='#experiencepage' className=" text-bold text-white font-sans text-sm mx-4 land3"> <span className="text-teal-400 font-bold mr-2">010.</span> Experience </a>
-                <a href='#projectspage' className=" text-bold text-white font-sans text-sm mx-4 land4"> <span className="text-teal-400 font-bold mr-2">011.</span> Projects </a>
+                <a onClick={() => setView('home')} className=" hover:cursor-pointer text-bold text-white font-sans text-sm mx-4 land2"> <span className="text-teal-400 font-bold mr-2">000.</span> Home </a>
+                <a onClick={() => setView('about')} className=" hover:cursor-pointer text-bold text-white font-sans text-sm mx-4 land2"> <span className="text-teal-400 font-bold mr-2">001.</span> About Me </a>
+                <a onClick={() => setView('experience')} className=" hover:cursor-pointer text-bold text-white font-sans text-sm mx-4 land3"> <span className="text-teal-400 font-bold mr-2">010.</span> Experience </a>
+                <a onClick={() => setView('projects')} className=" hover:cursor-pointer text-bold text-white font-sans text-sm mx-4 land4"> <span className="text-teal-400 font-bold mr-2">011.</span> Projects </a>
+                <a onClick={() => setView('contacts')} className=" hover:cursor-pointer text-bold text-white font-sans text-sm mx-4 land5"> <span className="text-teal-400 font-bold mr-2">100.</span> Contacts </a>
                 <button onClick={openResume} className="land5 inline-flex items-center px-6 py-2 ml-5 border border-teal-300 rounded-md shadow-sm text-sm font-medium text-white  hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"> Resume</button>
               </div>
             </div>

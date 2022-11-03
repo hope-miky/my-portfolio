@@ -9,7 +9,9 @@ import { animated, useSprings } from '@react-spring/web';
 
 
 
-const ProjectsView = ( {scroll_value} : any) => {
+const ProjectsView = ( {view} : any) => {
+
+    const [display, setDisplay] = useState(true)
 
     const [springs, apis] = useSprings(
         projects.length + 1,
@@ -21,26 +23,43 @@ const ProjectsView = ( {scroll_value} : any) => {
         })
     )
 
-    if (scroll_value > 2000 && scroll_value < 2600) {
-        apis.start( (index) => ({
-            to: {
-                opacity: 1,
-                y: 0
-            },
-            delay: index * 50
-        }))
-    } else {
-        apis.start( (index) => ({
-            to: {
-                opacity: 0,
-                y: -100
-            },
-            delay: index * 50
-        }))
-    }
+
+    useEffect(() => {
+        if(view === 'projects') {
+            setTimeout( () => {
+                setDisplay(true)
+                apis.start((index) => ({
+                    to: {
+                        y: 0,
+                        opacity: 1,
+                    },
+                    delay: index * 200
+                }));
+            }, 800)
+            
+        }
+        else {
+            apis.start((index) => ({
+                to: {
+                    y: -100,
+                    opacity: 0,
+                },
+                delay: index * 200
+              }));
+            setTimeout( () => {
+                setDisplay(false)
+            }, 1000)
+        }
+    
+    }, [view])
 
 
-   return  <div className="main-bg py-3" id="projectspage">
+
+
+   return  <>
+        {
+            display &&
+            <div className="main-bg py-3" id="projectspage">
                 <div className="flex-col align-middle ">
                 <animated.div style={{...springs[0]}} >
                         <button className=" ml-12 text-bold text-white font-sans text-4xl sm:text-5xl font-bold uppercase land2"> <span className="text-teal-400 font-bold mr-2">011.</span> Projects </button>
@@ -82,6 +101,8 @@ const ProjectsView = ( {scroll_value} : any) => {
                         </div>
                 </div>
    </div>
+        }
+   </>
 }
 
 export default ProjectsView

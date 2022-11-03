@@ -1,8 +1,10 @@
 import { animated, useSprings } from "@react-spring/web"
-import React from "react"
+import React, { useEffect, useState } from "react"
 import work_data from "./work_data"
 
-const ExperiencePageView = ({ scroll_value }: any) => {
+const ExperiencePageView = ({ view }: any) => {
+    
+    const [display, setDisplay] = useState(true)
 
     const [springs, apis] = useSprings(
         work_data.length + 1,
@@ -10,30 +12,45 @@ const ExperiencePageView = ({ scroll_value }: any) => {
             from: {
                 opacity: 0,
                 y: -100,
-                z: -100
             }
         })
     )
 
-    if (scroll_value > 1200 && scroll_value < 1800) {
-        apis.start( (index) => ({
-            to: {
-                opacity: 1,
-                y: 0
-            },
-            delay: index * 100
-        }))
-    } else {
-        apis.start( (index) => ({
-            to: {
-                opacity: 0,
-                y: -100
-            },
-            delay: index * 150
-        }))
-    }
+    useEffect(() => {
+        if(view === 'experience') {
+            setTimeout( () => {
+                setDisplay(true)
+                apis.start((index) => ({
+                    to: {
+                        y: 0,
+                        opacity: 1,
+                    },
+                    delay: index * 200
+                }));
+            }, 800)
+            
+        }
+        else {
+            apis.start((index) => ({
+                to: {
+                    y: -100,
+                    opacity: 0,
+                },
+                delay: index * 200
+              }));
+            setTimeout( () => {
+                setDisplay(false)
+            }, 800)
+        }
+    
+    }, [view])
 
-    return <div className=" first-screen sm:h-screen pb-36  main-bg" id="experiencepage" >
+
+
+    return <>
+    {
+        display && 
+        <div className=" first-screen sm:h-screen pb-36  main-bg" id="experiencepage" >
             <animated.div style={{...springs[0]}}>
                 <button className="mt-5 ml-12 text-bold text-white font-sans text-4xl font-bold uppercase sm:text-5xl "> <span className="text-teal-400 font-bold mr-2">010.</span> Experience </button>
                 <hr className=' sm:w-1/2 w-5/6 sm:mt-2' />
@@ -60,6 +77,8 @@ const ExperiencePageView = ({ scroll_value }: any) => {
 
 
         </div>
+    }
+    </>
 
 }
 

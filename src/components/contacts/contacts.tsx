@@ -1,8 +1,9 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { animated, useSprings } from "@react-spring/web"
 import { SocialIcon } from 'react-social-icons';
 
-const ContactsPageView = ( {scroll_value} : any) => {
+const ContactsPageView = ( {view} : any) => {
+    const [display, setDisplay] = useState(true)
 
     const [springs, apis] = useSprings(
             5,
@@ -14,26 +15,41 @@ const ContactsPageView = ( {scroll_value} : any) => {
         })
     )
 
-    if (scroll_value > 2800 && scroll_value < 3400) {
-        apis.start( (index) => ({
-            to: {
-                opacity: 1,
-                y: 0
-            },
-            delay: index * 100
-        }))
-    } else {
-        apis.start( (index) => ({
-            to: {
-                opacity: 0,
-                y: -100,
-            },
-            delay: index * 150
-        }))
-    }
+
+    useEffect(() => {
+        if(view === 'contacts') {
+            setTimeout( () => {
+                setDisplay(true)
+                apis.start((index) => ({
+                    to: {
+                        y: 0,
+                        opacity: 1,
+                    },
+                    delay: index * 200
+                }));
+            }, 800)
+            
+        }
+        else {
+            apis.start((index) => ({
+                to: {
+                    y: -100,
+                    opacity: 0,
+                },
+                delay: index * 200
+              }));
+            setTimeout( () => {
+                setDisplay(false)
+            }, 800)
+        }
+    
+    }, [view])
 
 
-    return <div className=" first-screen pb-36 w-screen main-bg sm:mt-24 fixed z-40 " id="contactspage" >
+    return <>
+    {
+        display && 
+        <div className=" first-screen pb-36 w-screen main-bg sm:mt-24 fixed z-40 " id="contactspage" >
             
             <animated.div style={{...springs[0]}}>
                 <button className="mt-5 ml-12 text-bold text-white font-sans font-bold uppercase text-4xl sm:text-5xl "> <span className="text-teal-400 font-bold mr-2">100.</span> Contacts </button>
@@ -64,6 +80,8 @@ const ContactsPageView = ( {scroll_value} : any) => {
 
 
         </div>
+    }
+    </>
 
 }
 
