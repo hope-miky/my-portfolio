@@ -83,9 +83,11 @@ const NavBarView = ( {setView} : any) => {
             <div id="mySidenav" className="sidenav backdrop-blur-sm bg-main-teal">
               <a className="closebtn text-teal-500" onClick={closeNav}>&times;</a>
               <div className=" flex flex-col inset-y-0 right-0 pl-5 items-start pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                    <a href='#aboutmepage' className=" text-bold text-white font-sans text-sm my-4 land2"> <span className="text-teal-400 font-bold mr-2">001.</span> About Me </a>
-                    <a href='#experiencepage' className=" text-bold text-white font-sans text-sm my-4 land3"> <span className="text-teal-400 font-bold mr-2">010.</span> Experience </a>
-                    <a href='#projectspage' className=" text-bold text-white font-sans text-sm my-4 land4"> <span className="text-teal-400 font-bold mr-2">011.</span> Projects </a>
+                    <a onClick={() => setView('home')} className="hover:cursor-pointer text-bold text-white font-sans text-sm my-4 land2"> <span className="text-teal-400 font-bold mr-2">000.</span> Home </a>
+                    <a onClick={() => setView('about')} className="hover:cursor-pointer text-bold text-white font-sans text-sm my-4 land2"> <span className="text-teal-400 font-bold mr-2">001.</span> About Me </a>
+                    <a onClick={() => setView('experience')} className="hover:cursor-pointer text-bold text-white font-sans text-sm my-4 land3"> <span className="text-teal-400 font-bold mr-2">010.</span> Experience </a>
+                    <a onClick={() => setView('projects')}  className="hover:cursor-pointer text-bold text-white font-sans text-sm my-4 land4"> <span className="text-teal-400 font-bold mr-2">011.</span> Projects </a>
+                    <a onClick={() => setView('contacts')}  className="hover:cursor-pointer text-bold text-white font-sans text-sm my-4 land4"> <span className="text-teal-400 font-bold mr-2">100.</span> Contacts </a>
                     <button onClick={openResume} className="land5 px-6 py-2 mt-5 border border-teal-300 rounded-md shadow-sm text-sm font-medium text-white  hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"> Resume</button>
                 </div>
             </div>

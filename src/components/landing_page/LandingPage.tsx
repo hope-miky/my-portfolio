@@ -45,8 +45,10 @@ const LandingPageView = ( {scroll_value, view} : any ) => {
     
 
 
-    return <div className=" first-screen h-screen pb-36 flex flex-wrap flex-col justify-center main-bg" >
-            { display &&
+    return <>
+    {
+        display && 
+        <div className=" first-screen h-screen pb-36 flex flex-wrap flex-col justify-center main-bg" >
             <div className=" w-4/5 sm:w-3/5 mx-auto">
             
                 <animated.div style={{...first_spring[0] }}>
@@ -76,8 +78,9 @@ const LandingPageView = ( {scroll_value, view} : any ) => {
                 </animated.div>
                 
             </div>
-}
         </div>
+    }
+    </>
 
 }
 

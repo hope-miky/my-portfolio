@@ -49,7 +49,7 @@ const ContactsPageView = ( {view} : any) => {
     return <>
     {
         display && 
-        <div className=" first-screen pb-36 w-screen main-bg sm:mt-24 fixed z-40 " id="contactspage" >
+        <div className=" first-screen pb-36 w-screen main-bg sm:mt-24 fixed " id="contactspage" >
             
             <animated.div style={{...springs[0]}}>
                 <button className="mt-5 ml-12 text-bold text-white font-sans font-bold uppercase text-4xl sm:text-5xl "> <span className="text-teal-400 font-bold mr-2">100.</span> Contacts </button>

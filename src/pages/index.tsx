@@ -44,21 +44,21 @@ const IndexPage = () => {
             
             {/* <div className="p bg-red-300 text-center font-mono text-sm font-bold"> Please note that my portfolio is still under development, for now :) </div> */}
             <NavBarView setView={setView} />
-            <div className=" fixed z-0">
+            {/* <div className=" fixed z-0"> */}
                 <LandingPageView scroll_value={scroll_value} view={view} />
-            </div>
+            {/* </div> */}
 
-              <div className="fixed z-10">
+              {/* <div className="fixed z-10"> */}
                     <AboutMeView scroll_value={scroll_value} view={view} />
-              </div>
+              {/* </div> */}
 
-              <div className="fixed z-20">
+              {/* <div className="fixed z-20"> */}
                   <ExperiencePageView scroll_value={scroll_value} view={view} />
-              </div>
+              {/* </div> */}
             
-              <div className="fixed z-30">
+              {/* <div className="fixed z-30"> */}
                   <ProjectsView scroll_value={scroll_value} view={view} />
-              </div>
+              {/* </div> */}
 
               <ContactsPageView scroll_value={scroll_value} view={view} />
 
