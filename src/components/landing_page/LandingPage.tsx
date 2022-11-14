@@ -1,10 +1,14 @@
 import { animated, useSpring, useSprings } from "@react-spring/web"
 import React, { useEffect, useState } from "react"
 import './sample.css'
+import Typewriter from 'typewriter-effect';
 
-const LandingPageView = ( {scroll_value, view} : any ) => {
+
+const LandingPageView = ( {setView, view} : any ) => {
 
     const [display, setDisplay] = useState(true)
+    const [ap_dis, setAppDis] = useState("web")
+    // const _apps_display = ['web', 'mobile']
 
     const [ first_spring, first_api] = useSprings(
         5,
@@ -15,6 +19,13 @@ const LandingPageView = ( {scroll_value, view} : any ) => {
             }
         })
     )
+
+    const [ _display_spring, _display_api] = useSpring(() => ({
+        from: {
+            y: 0,
+            opacity: 1,
+        }
+    }))
 
     useEffect(() => {
         if(view === 'home') {
@@ -61,9 +72,29 @@ const LandingPageView = ( {scroll_value, view} : any ) => {
 
                 <animated.div style={{...first_spring[2] }}>
                     <div className="text-2xl lg:text-7xl md:text-4xl sm:text-3xl text-gray-400 font-sans font-bold my-4 md:my-1"> 
-                    I build <span className="text-amber-300 font-bold">apps</span> for the web! 
-                    </div>
-                </animated.div>
+                    {/* I build 
+                    <span className="text-amber-400 font-bold "> <Typewriter
+                        options={{
+                            strings: ['web', 'mobile'],
+                            autoStart: true,
+                            loop: true,
+                        }}
+                        /> </span>
+                    
+                    apps!  */}
+                    <Typewriter
+                        onInit={(typewriter) => {
+                            typewriter
+                            .pauseFor(1000)
+                            .typeString('I build <span style="color: #FFBF00;"> web </span> apps!')
+                            .pauseFor(2500)
+                            .deleteChars(6)
+                            .start()
+                            .typeString(' and <span style="color: #FFBF00;"> mobile </span> apps!')
+                        }}
+                        />
+                                            </div>
+                                        </animated.div>
 
                 <animated.div style={{...first_spring[3] }}>
                     <div className=" text-xs sm:text-xs md:text-sm lg:text-lg text-gray-400 sm:w-3/5 font-thin font-mono my-4"> 
@@ -73,8 +104,9 @@ const LandingPageView = ( {scroll_value, view} : any ) => {
 
                 <animated.div style={{...first_spring[4] }}>
                     <div className=""> 
-                        <a href="#contactspage" type="button" className="inline-flex items-center sm:px-12 px-6 py-2 sm:py-4 border border-teal-300 rounded-md shadow-sm text-xs sm:text-sm font-medium text-white  hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">Contact me</a>
-                    </div>
+                        <a onClick={() => setView('contacts')} className=" hover:cursor-pointer mt-3 inline-block animate-border rounded-xl bg-white from-main-teal via-purple-500 to-main-teal bg-[length:400%_400%] p-0.5 transition hover:bg-gradient-to-r hover:shadow-lg focus:outline-none focus:ring">
+                            <span className="block rounded-[11px] bg-slate-900 px-10 py-4 text-xl text-white"> Contact me </span></a>
+                        </div>
                 </animated.div>
                 
             </div>

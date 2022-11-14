@@ -59,15 +59,15 @@ const ProjectsView = ( {view} : any) => {
    return  <>
         {
             display &&
-            <div className="main-bg py-3" id="projectspage">
+            <div className="main-bg py-3" >
                 <div className="flex-col align-middle ">
                 <animated.div style={{...springs[0]}} >
                         <button className=" ml-12 text-bold text-white font-sans text-4xl sm:text-5xl font-bold uppercase land2"> <span className="text-teal-400 font-bold mr-2">011.</span> Projects </button>
                         <hr className=' sm:w-1/2 w-5/6 sm:mt-2 lg:mt-0 sm:mb-12' />
                 </animated.div>
 
-                        <div className="flex justify-center h-screen">
-                            <div className="flex maxwidthlimit flex-wrap mt-3 mx-auto  lg:mx-44 h-3/4">
+                        <div className="flex justify-center ">
+                            <div className="flex maxwidthlimit flex-wrap mt-3 mx-auto  lg:mx-44 ">
                                 {
                                     springs.map((_, idx: number) => {
                                         if(idx < projects.length ) {

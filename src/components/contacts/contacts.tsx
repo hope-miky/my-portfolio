@@ -55,6 +55,8 @@ const ContactsPageView = ( {view} : any) => {
                 <button className="mt-5 ml-12 text-bold text-white font-sans font-bold uppercase text-4xl sm:text-5xl "> <span className="text-teal-400 font-bold mr-2">100.</span> Contacts </button>
                 <hr className=' sm:w-1/2 w-5/6 sm:mt-2' />
             </animated.div>
+
+            {/* <FlipMove></FlipMove> */}
             
             <div className=" flex flex-wrap justify-center mt-24 ">
                 <animated.div style={{...springs[1]}} className="flex flex-col justify-center w-full sm:w-1/4  mx-12 mb-10 ">

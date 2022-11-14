@@ -2,9 +2,11 @@ import { StaticImage } from "gatsby-plugin-image";
 import React, { useEffect, useState } from "react";
 import { animated, useSpring } from "@react-spring/web";
 import CircularImagesComponent from "./CircularImages";
+import {BrowserView, MobileView} from 'react-device-detect';
 
 const AboutMeView = ({ view }: any) => {
   const [display, setDisplay] = useState(false);
+  const [innerWidth, setinnerWidth] = useState(window.innerWidth)
 
   const [springs, api] = useSpring(() => ({
     from: {
@@ -41,7 +43,7 @@ const AboutMeView = ({ view }: any) => {
     <>
       {display && (
         <div
-          className=" main-bg sm:py-32 md:py-0 w-screen flex flex-col justify-start md:h-screen"
+          className=" main-bg sm:py-32 md:py-0 w-screen flex flex-col justify-start "
           id="aboutmepage"
         >
           <></>
@@ -63,9 +65,11 @@ const AboutMeView = ({ view }: any) => {
               ...springs,
             }}
           >
-            <div className="flex flex-wrap w-screen h-screen mx-auto pb-24 maxwidthlimit">
-              <div className=" flex-col flex-1 w-full px-12 sm:px-40 maxwidthlimit">
-                <p className=" font-sans text-gray-200 my-4  text-justify ">
+            <div className="flex flex-wrap w-screen  mx-auto pb-24">
+
+
+              <div className=" flex-col px-12 sm:px-40 min-w-min ">
+                <p className=" font-sans text-gray-200 my-4 text-justify ">
                   I am Tesfamichael Molla, Software Engineer based in Poland. I
                   am born and raised in Woldiya, Ethiopia. I started my
                   developer journey since highschool studying HTML and CSS and
@@ -107,7 +111,9 @@ const AboutMeView = ({ view }: any) => {
                 </p>
               </div>
 
-              <div className="flex-1 flex flex-col justify-center my-auto  w-1/2 h-1/2 ">
+              
+            <BrowserView>
+              <div className="flex-1 flex flex-col justify-center md:mt-40  w-1/2 h-1/2 ">
                 <CircularImagesComponent />
                 <StaticImage
                   className="ml-24 mt-24 w-64 border-2 rounded-full border-teal-500 p-5 absolute  "
@@ -115,6 +121,8 @@ const AboutMeView = ({ view }: any) => {
                   alt="A dinosaur"
                 />
               </div>
+            </BrowserView>
+              
             </div>
           </animated.div>
         </div>

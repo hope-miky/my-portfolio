@@ -25,44 +25,35 @@ const IndexPage = () => {
 
 
 
-  return <div className="" >
-            <Seo
-              title="Tesfamichael Molla"
-              description="Hello, I am Tesfamichael Molla, BH Full-stack developer based in Poland."
-              featuredImage= {
-                {
-                  images: {
-                      fallback: {
-                          src: "https://tesfamichael.dev/screen.png"
-                      },
-                  },
-                  width: 12,
-                  height: 21,
-              }
-              }
-            />
-            
-            {/* <div className="p bg-red-300 text-center font-mono text-sm font-bold"> Please note that my portfolio is still under development, for now :) </div> */}
-            <NavBarView setView={setView} />
-            {/* <div className=" fixed z-0"> */}
-                <LandingPageView scroll_value={scroll_value} view={view} />
-            {/* </div> */}
+  return (
+    <div className="">
+      <Seo
+        title="Tesfamichael Molla"
+        description="Hello, I am Tesfamichael Molla, BH Full-stack developer based in Poland."
+        featuredImage={{
+          images: {
+            fallback: {
+              src: "https://tesfamichael.dev/screen.png",
+            },
+          },
+          width: 12,
+          height: 21,
+        }}
+      />
 
-              {/* <div className="fixed z-10"> */}
-                    <AboutMeView scroll_value={scroll_value} view={view} />
-              {/* </div> */}
+      <NavBarView setView={setView} />
 
-              {/* <div className="fixed z-20"> */}
-                  <ExperiencePageView scroll_value={scroll_value} view={view} />
-              {/* </div> */}
-            
-              {/* <div className="fixed z-30"> */}
-                  <ProjectsView scroll_value={scroll_value} view={view} />
-              {/* </div> */}
+      <LandingPageView scroll_value={scroll_value} view={view} setView={setView} />
 
-              <ContactsPageView scroll_value={scroll_value} view={view} />
+      <AboutMeView scroll_value={scroll_value} view={view} />
 
-        </div>
+      <ExperiencePageView scroll_value={scroll_value} view={view} />
+
+      <ProjectsView scroll_value={scroll_value} view={view} />
+
+      <ContactsPageView scroll_value={scroll_value} view={view} />
+    </div>
+  );
   
 }
 

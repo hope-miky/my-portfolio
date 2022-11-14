@@ -12,7 +12,9 @@ const CircularImagesComponent = (props: any) => {
   const [ position, setPosition ] = useState([400, 0])
   let x = 200  // center
   let y = 0   // center
-  let r = 250   // radius
+  let r = window.innerWidth > 640 ? 250 : 100;   // radius
+
+  console.log(window.innerWidth)
 
   const [ images, _ ] = useState(['../../assets/images/django-logo.png',])
 
