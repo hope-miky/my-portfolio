@@ -107,8 +107,7 @@ export default function Seo(props: SeoProps) {
     },
     {
       name: "og:url",
-      // content: `${site?.siteMetadata?.siteUrl}${location.pathname}`,
-      content: `https://tesfamichael.dev/portfolio_vid.gif`,
+      content: `${site?.siteMetadata?.siteUrl}${location.pathname}`,
     },
     {
       name: "twitter:card",

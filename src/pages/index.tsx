@@ -28,7 +28,7 @@ const IndexPage = () => {
         featuredImage={{
           images: {
             fallback: {
-              src: "https://tesfamichael.dev/portfolio_vid.gif",
+              src: "https://tesfamichael.dev/screen.png",
             },
           },
           width: 12,
