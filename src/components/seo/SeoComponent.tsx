@@ -1,7 +1,7 @@
-import { useStaticQuery, graphql } from 'gatsby';
-import * as React from 'react';
-import { Helmet } from 'react-helmet';
-import { useLocation } from '@reach/router';
+import { useStaticQuery, graphql } from "gatsby";
+import * as React from "react";
+import { Helmet } from "react-helmet";
+import { useLocation } from "@reach/router";
 
 type ImageDataType = {
   images: {
@@ -34,29 +34,28 @@ export type SeoProps = {
 };
 export default function Seo(props: SeoProps) {
   // first get our default data from gatsby config and default featured image
-  const { site, featuredImage } =
-    useStaticQuery<any>(graphql`
-      query SeoMetaData {
-        site {
-          siteMetadata {
-            title
-            description
-            siteUrl
-            og {
-              siteName
-              twitterCreator
-            }
-          }
-        }
-        featuredImage: file(
-          absolutePath: { glob: "**/src/images/featured-image.png" }
-        ) {
-          childImageSharp {
-            gatsbyImageData(layout: FIXED, width: 1200)
+  const { site, featuredImage } = useStaticQuery<any>(graphql`
+    query SeoMetaData {
+      site {
+        siteMetadata {
+          title
+          description
+          siteUrl
+          og {
+            siteName
+            twitterCreator
           }
         }
       }
-    `);
+      featuredImage: file(
+        absolutePath: { glob: "**/src/images/featured-image.png" }
+      ) {
+        childImageSharp {
+          gatsbyImageData(layout: FIXED, width: 1200)
+        }
+      }
+    }
+  `);
 
   // determine the featured image from props
   const ogImage =
@@ -75,59 +74,60 @@ export default function Seo(props: SeoProps) {
   const metas = [
     // basic seo
     {
-      name: 'description',
+      name: "description",
       content: description,
     },
     {
-      name: 'og:image',
+      name: "og:image",
       content: ogImage.images.fallback.src,
     },
     {
-      name: 'og:image:width',
+      name: "og:image:width",
       content: `${ogImage.width}`,
     },
     {
-      name: 'og:image:height',
+      name: "og:image:height",
       content: `${ogImage.height}`,
     },
     {
-      name: 'og:type',
-      content: 'website',
+      name: "og:type",
+      content: "website",
     },
     {
-      name: 'og:title',
+      name: "og:title",
       content: title,
     },
     {
-      name: 'og:description',
+      name: "og:description",
       content: description,
     },
     {
-      name: 'og:site_name',
+      name: "og:site_name",
       content: site!.siteMetadata!.og!.siteName,
     },
     {
-      name: 'og:url',
-      content: `${site?.siteMetadata?.siteUrl}${location.pathname}`,
+      name: "og:url",
+      // content: `${site?.siteMetadata?.siteUrl}${location.pathname}`,
+      content: `https://tesfamichael.dev/portfolio_vid.gif`,
     },
     {
-      name: 'twitter:card',
-      content: 'summary_large_image',
+      name: "twitter:card",
+      content: "summary_large_image",
     },
     {
-      name: 'twitter:description',
+      name: "twitter:description",
       content: description,
     },
     {
-      name: 'twitter:title',
+      name: "twitter:title",
       content: title,
     },
     {
-      name: 'twitter:image',
+      name: "twitter:image",
       content: ogImage.images.fallback.src,
     },
     {
-      name: 'twitter:creator',
+      name: "twitter:creator",
       content: site!.siteMetadata!.og!.twitterCreator,
     },
   ];
@@ -135,7 +135,7 @@ export default function Seo(props: SeoProps) {
   // If we have keywords, then add it
   if (props.keywords) {
     metas.push({
-      name: 'keywords',
+      name: "keywords",
       content: props.keywords,
     });
   }
@@ -145,7 +145,7 @@ export default function Seo(props: SeoProps) {
       <html lang="en" />
       <meta charSet="utf-8" />
       <title>{title}</title>
-      {metas.map(meta => (
+      {metas.map((meta) => (
         <meta key={meta.name} name={meta.name} content={meta.content} />
       ))}
     </Helmet>
