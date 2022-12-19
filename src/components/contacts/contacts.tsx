@@ -122,7 +122,7 @@ const ContactsPageView = ({ view }: any) => {
 
           {/* Desktop view */}
           <animated.div
-            className=" hidden md:visible text-bold text-white font-sans font-bold uppercase text-4xl sm:text-5xl md:mt-48 ml-12"
+            className=" hidden md:block text-bold text-white font-sans font-bold uppercase text-4xl sm:text-5xl md:mt-48 ml-12"
             style={{ ...springs[0] }}
           >
             <Typewriter

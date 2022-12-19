@@ -50,7 +50,7 @@ const ExperiencePageView = ({ view }: any) => {
           {/* Desktop view */}
           <animated.div
             style={{ ...springs[0] }}
-            className="text-bold hidden md:visible text-white font-sans font-bold uppercase text-4xl sm:text-5xl ml-12 mt-12"
+            className="text-bold hidden md:block text-white font-sans font-bold uppercase text-4xl sm:text-5xl ml-12 mt-12"
           >
             <Typewriter
               onInit={(typewriter) => {
@@ -79,7 +79,7 @@ const ExperiencePageView = ({ view }: any) => {
             />
           </animated.div>
 
-          <div className=" h-3/4 w-screen flex flex-wrap flex-col justify-center md:mt-24 sm:mt-0">
+          <div className="  w-screen flex flex-wrap flex-col justify-center md:mt-24 sm:mt-0">
             <div className="flex flex-wrap justify-center ">
               {springs.map((_, idx: number) => {
                 if (idx < work_data.length) {

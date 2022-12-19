@@ -50,7 +50,7 @@ const ProjectsView = ({ view }: any) => {
           <div className="flex-col align-middle ">
             <animated.div
               style={{ ...springs[0] }}
-              className=" hidden md:visible text-bold text-white font-sans font-bold uppercase text-4xl sm:text-5xl ml-12"
+              className=" hidden md:block text-bold text-white font-sans font-bold uppercase text-4xl sm:text-5xl ml-12"
             >
               {/* <button className=" ml-12 text-bold text-white font-sans text-4xl sm:text-5xl font-bold uppercase land2"> <span className="text-teal-400 font-bold mr-2">011.</span> Projects </button>
                         <hr className=' sm:w-1/2 w-5/6 sm:mt-2 lg:mt-0 sm:mb-12' /> */}

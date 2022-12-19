@@ -47,18 +47,17 @@ const AboutMeView = ({ view }: any) => {
           className=" main-bg sm:py-32 md:py-0 w-screen flex flex-col justify-start "
           id="aboutmepage"
         >
-          <></>
           <animated.div
             style={{
               ...springs,
             }}
-            className=" hidden md:visible text-bold text-white font-sans font-bold uppercase text-4xl sm:text-5xl ml-12 mt-12"
+            className=" hidden md:inline text-bold text-white font-sans font-bold uppercase text-4xl sm:text-5xl ml-12 mt-12"
           >
             <Typewriter
               onInit={(typewriter) => {
                 typewriter
                   .typeString(
-                    '<span style="color: #66b2b2; font-size: 45px;">100.<br /></span> <span style="font-size: 85px;">About me</span>'
+                    '<span style="color: #66b2b2; font-size: 45px;">001.<br /></span> <span style="font-size: 85px;">About me</span>'
                   )
                   .start();
               }}
@@ -76,7 +75,7 @@ const AboutMeView = ({ view }: any) => {
               onInit={(typewriter) => {
                 typewriter
                   .typeString(
-                    '<span style="color: #66b2b2; font-size: 25px;">100.<br /></span> <span style="font-size: 50px;">About me</span>'
+                    '<span style="color: #66b2b2; font-size: 25px;">001.<br /></span> <span style="font-size: 50px;">About me</span>'
                   )
                   .start();
               }}
