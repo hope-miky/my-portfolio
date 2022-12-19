@@ -7,7 +7,6 @@ import Typewriter from "typewriter-effect";
 
 const AboutMeView = ({ view }: any) => {
   const [display, setDisplay] = useState(false);
-  const [innerWidth, setinnerWidth] = useState(window.innerWidth);
 
   const [springs, api] = useSpring(() => ({
     from: {
