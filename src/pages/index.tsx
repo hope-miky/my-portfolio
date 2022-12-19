@@ -1,29 +1,24 @@
 // import React, { useEffect } from "react"
-import * as React from "react"
-import AboutMeView from "../components/about_me/AboutMe"
-import LandingPageView from "../components/landing_page/LandingPage"
-import NavBarView from "../components/NavBar"
-import ProjectsView from "../components/projects/Projects"
-import ExperiencePageView from "../components/work/Experience"
-import ContactsPageView from "../components/contacts/contacts"
-import Seo from "../components/seo/SeoComponent"
+import * as React from "react";
+import AboutMeView from "../components/about_me/AboutMe";
+import LandingPageView from "../components/landing_page/LandingPage";
+import NavBarView from "../components/NavBar";
+import ProjectsView from "../components/projects/Projects";
+import ExperiencePageView from "../components/work/Experience";
+import ContactsPageView from "../components/contacts/contacts";
+import Seo from "../components/seo/SeoComponent";
 
 const IndexPage = () => {
+  const [scroll_value, setScroll] = React.useState(0);
 
+  const [view, setView] = React.useState("home");
 
-  const [scroll_value, setScroll] = React.useState(0)
-
-  const [view, setView] = React.useState("home")
-
-    React.useEffect(() => {
-        window.addEventListener('scroll', (event: any) => {
-          console.log(window.scrollY);
-          setScroll(window.scrollY)
-        });
-        
-    }, [])
-
-
+  React.useEffect(() => {
+    window.addEventListener("scroll", (event: any) => {
+      console.log(window.scrollY);
+      setScroll(window.scrollY);
+    });
+  }, []);
 
   return (
     <div className="">
@@ -33,7 +28,7 @@ const IndexPage = () => {
         featuredImage={{
           images: {
             fallback: {
-              src: "https://tesfamichael.dev/screen.png",
+              src: "https://tesfamichael.dev/portfolio_vid.gif",
             },
           },
           width: 12,
@@ -43,7 +38,11 @@ const IndexPage = () => {
 
       <NavBarView setView={setView} />
 
-      <LandingPageView scroll_value={scroll_value} view={view} setView={setView} />
+      <LandingPageView
+        scroll_value={scroll_value}
+        view={view}
+        setView={setView}
+      />
 
       <AboutMeView scroll_value={scroll_value} view={view} />
 
@@ -54,7 +53,6 @@ const IndexPage = () => {
       <ContactsPageView scroll_value={scroll_value} view={view} />
     </div>
   );
-  
-}
+};
 
-export default IndexPage
+export default IndexPage;
