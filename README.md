@@ -11,6 +11,6 @@
 
 ### V2 of my portfolio website 
 
-Framework = Gatsby
-Animation = react-spring and typewriter-effect
-UI = TailwindCSS
+- Framework = Gatsby
+- Animation = react-spring and typewriter-effect
+- UI = TailwindCSS
