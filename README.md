@@ -3,17 +3,14 @@
     Personal portfolio website using Gatsby
 </h1>
   <a style="margin-left: 25%" href="https://tesfamichael.dev">
-    ![sample gif](src/assets/images/portfolio_vid.gif)
+    <img  alt="PortfolioScreenShot" src="https://github.com/hope-miky/my-portfolio/blob/v2/static/portfolio_vid.gif" width="600" />
   </a>
 </p>
 
 
 
-### Ongoing personal portfoio website I am working on 
+### V2 of my portfolio website 
 
-
-
-```
-I took some desing motivations (ONLY DESIGN) from some websites which I will be including after
-the first release of the website
-```
+Framework = Gatsby
+Animation = react-spring and typewriter-effect
+UI = TailwindCSS
