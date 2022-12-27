@@ -3,7 +3,7 @@
     Personal portfolio website using Gatsby
 </h1>
   <a style="margin-left: 25%" href="https://tesfamichael.dev">
-    <img  alt="PortfolioScreenShot" src="src/assets/images/portfolio_vid.gif" width="600" />
+    ![sample gif](src/assets/images/portfolio_vid.gif)
   </a>
 </p>
 
