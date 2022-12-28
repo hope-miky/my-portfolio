@@ -97,7 +97,7 @@ const ContactsPageView = ({ view }: any) => {
                 />
                 <SocialIcon
                   className="mx-3 hover:-translate-y-1 "
-                  url="https://github.com/Tesfamichael1074"
+                  url="https://github.com/hope-miky"
                   bgColor="white"
                 />
                 <SocialIcon
