@@ -1,24 +1,56 @@
-// import React, { useEffect } from "react"
 import * as React from "react";
 import AboutMeView from "../components/about_me/AboutMe";
 import LandingPageView from "../components/landing_page/LandingPage";
-import NavBarView from "../components/NavBar";
 import ProjectsView from "../components/projects/Projects";
 import ExperiencePageView from "../components/work/Experience";
 import ContactsPageView from "../components/contacts/contacts";
 import Seo from "../components/seo/SeoComponent";
+import { animated, useSpring } from "@react-spring/web";
+import { onMouseEvent } from "./_helper_functions";
+import NavBarComponent from "./_nav_bar";
 
 const IndexPage = () => {
-  const [scroll_value, setScroll] = React.useState(0);
-
   const [view, setView] = React.useState("home");
+  const [cursorPosition, setCursorPosition] = React.useState({
+    x: 0,
+    y: 0,
+  });
+
+  const [cursorVariant, setCursorVariant] = React.useState("default");
+
+  const [_mouseSprings, _mouseApi] = useSpring(() => ({
+    from: {
+      height: 36,
+      width: 36,
+      x: 0,
+      y: 0,
+      backgroundColor: "white",
+      mixBlendMode: "normal",
+    },
+  }));
+
+  const mouseEventListener = (e: any) =>
+    setCursorPosition({
+      x: e.clientX,
+      y: e.clientY,
+    });
 
   React.useEffect(() => {
-    window.addEventListener("scroll", (event: any) => {
-      console.log(window.scrollY);
-      setScroll(window.scrollY);
-    });
+    onMouseEvent(_mouseApi, cursorVariant, cursorPosition);
+  }, [cursorPosition]);
+
+  React.useEffect(() => {
+    window.addEventListener("mousemove", mouseEventListener);
+    return () => {
+      window.removeEventListener("mousemove", mouseEventListener);
+    };
   }, []);
+
+  const textEnter = () => setCursorVariant("text");
+  const textLeave = () => setCursorVariant("default");
+
+  const menuTextEnter = () => setCursorVariant("menutext");
+  const menuTextLeave = () => setCursorVariant("default");
 
   return (
     <div className="">
@@ -36,21 +68,28 @@ const IndexPage = () => {
         }}
       />
 
-      <NavBarView setView={setView} />
+      {/* <NavBarView setView={setView} /> */}
+      <animated.div
+        style={{ ..._mouseSprings }}
+        className="fixed z-50 rounded-full pointer-events-none"
+      ></animated.div>
 
-      <LandingPageView
-        scroll_value={scroll_value}
-        view={view}
-        setView={setView}
+      <NavBarComponent
+        customMouseEnter={menuTextEnter}
+        customMouseLeave={menuTextLeave}
       />
 
-      <AboutMeView scroll_value={scroll_value} view={view} />
+      <LandingPageView
+        view={view}
+        setView={setView}
+        customMouseEnter={textEnter}
+        customMouseLeave={textLeave}
+      />
 
-      <ExperiencePageView scroll_value={scroll_value} view={view} />
-
-      <ProjectsView scroll_value={scroll_value} view={view} />
-
-      <ContactsPageView scroll_value={scroll_value} view={view} />
+      <AboutMeView view={view} />
+      {/* <ExperiencePageView view={view} /> */}
+      {/* <ProjectsView view={view} /> */}
+      <ContactsPageView view={view} />
     </div>
   );
 };
