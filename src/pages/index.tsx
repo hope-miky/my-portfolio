@@ -8,6 +8,7 @@ import Seo from "../components/seo/SeoComponent";
 import { animated, useSpring } from "@react-spring/web";
 import { onMouseEvent } from "./_helper_functions";
 import NavBarComponent from "./_nav_bar";
+import { Link } from "gatsby"
 
 const IndexPage = () => {
   const [view, setView] = React.useState("home");

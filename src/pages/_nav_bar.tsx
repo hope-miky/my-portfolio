@@ -1,7 +1,8 @@
 import React from "react";
 import { animated, useSprings } from "@react-spring/web";
 import { MenuAlt2Icon, ArrowRightIcon } from "@heroicons/react/outline";
-
+import { Link } from "gatsby"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 function NavBarComponent({ customMouseEnter, customMouseLeave }: any) {
   const bg_colors = ["bg-amber-400", "bg-red-400", "bg-blue-400"];
   const [_springs, _apis] = useSprings(bg_colors.length + 1, (index) => ({
@@ -16,7 +17,7 @@ function NavBarComponent({ customMouseEnter, customMouseLeave }: any) {
     "About Me",
     "Experience",
     "Projects",
-    "Contacts",
+    "Contact",
   ];
 
   const moveNavBar = () => {
@@ -74,7 +75,10 @@ function NavBarComponent({ customMouseEnter, customMouseLeave }: any) {
                   onMouseEnter={customMouseEnter}
                   onMouseLeave={customMouseLeave}
                 >
-                  {menu_text}
+                <div>
+                  <Link to={`/${menu_text}/`}>{menu_text}</Link>
+                  {/* <Link to={`/contact/`}>{menu_text}</Link> */}
+                </div>
                 </span>
               </div>
             );
