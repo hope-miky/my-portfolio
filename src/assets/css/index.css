@@ -1,90 +1,88 @@
-
-
 html {
-	scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 .main-bg {
-    /* background-color: #26272F */
-    background-color: rgb(11,25,46),
+  /* background-color: #26272F */
+  /* background-color: rgb(11, 25, 46); */
 }
 
 body {
-    background-color: rgb(11,25,46)
+  /* background-color: rgb(11,25,46) */
 }
 
 .main2-bg {
-    background-color: #112340;
+  /* background-color: #112340; */
 }
 .profile-img {
-    animation-duration: 1.5s;
-    animation-name: slidein;
+  animation-duration: 1.5s;
+  animation-name: slidein;
 }
 
 .profile-img:hover {
-    transform: translateY(-10px);
+  transform: translateY(-10px);
 }
 
 .cover-img {
-    /* background-image: url('../images/python.jpeg'); */
-    background-size: contain;
+  /* background-image: url('../images/python.jpeg'); */
+  background-size: contain;
 }
 
 .project_land1 {
-    animation-duration: 1s;
-    animation-name: project_slidein;
+  animation-duration: 1s;
+  animation-name: project_slidein;
 }
 .project_land2 {
-    animation-duration: 1s;
-    animation-delay: 50ms;
-    animation-name: project_slidein;
+  animation-duration: 1s;
+  animation-delay: 50ms;
+  animation-name: project_slidein;
 }
 .project_land0 {
-    animation-duration: 1s;
-    animation-delay: 100ms;
-    animation-name: project_slidein;
+  animation-duration: 1s;
+  animation-delay: 100ms;
+  animation-name: project_slidein;
 }
 
 @keyframes project_slidein {
-    from {
-        transform: translateY(-10px);
-        opacity: 0;
-    }
-  
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
   }
 
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .land {
-    animation-duration: 1.5s;
-    animation-delay: -400ms;
-    animation-name: slidein;
+  animation-duration: 1.5s;
+  animation-delay: -400ms;
+  animation-name: slidein;
 }
 
 .land2 {
-    animation-duration: 1.5s;
-    animation-delay: -300ms;
-    animation-name: slidein;
+  animation-duration: 1.5s;
+  animation-delay: -300ms;
+  animation-name: slidein;
 }
 .land3 {
-    animation-duration: 1.5s;
-    animation-delay: -200ms;
-    animation-name: slidein;
+  animation-duration: 1.5s;
+  animation-delay: -200ms;
+  animation-name: slidein;
 }
 .land4 {
-    animation-duration: 1.5s;
-    animation-delay: -100ms;
-    animation-name: slidein;
+  animation-duration: 1.5s;
+  animation-delay: -100ms;
+  animation-name: slidein;
 }
 .land5 {
-    animation-duration: 1.5s;
-    animation-delay: -10ms;
-    animation-name: slidein;
+  animation-duration: 1.5s;
+  animation-delay: -10ms;
+  animation-name: slidein;
 }
 
 .maxwidthlimit {
-    max-width: 1300px;
-    overflow-y: auto;
+  max-width: 1300px;
+  overflow-y: auto;
 }

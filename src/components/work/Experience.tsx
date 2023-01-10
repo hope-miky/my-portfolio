@@ -15,17 +15,19 @@ const ExperiencePageView = ({ view }: any) => {
   }));
 
   useEffect(() => {
-    if (view === "experience") {
+    if (view === "Experience") {
       setTimeout(() => {
         setDisplay(true);
-        apis.start((index) => ({
-          to: {
-            y: 0,
-            opacity: 1,
-          },
-          delay: index * 200,
-        }));
-      }, 800);
+        setTimeout(() => {
+          apis.start((index) => ({
+            to: {
+              y: 0,
+              opacity: 1,
+            },
+            delay: index * 200,
+          }));
+        }, 1000);
+      }, 600);
     } else {
       apis.start((index) => ({
         to: {
@@ -44,35 +46,19 @@ const ExperiencePageView = ({ view }: any) => {
     <>
       {display && (
         <div
-          className=" first-screen sm:h-screen pb-36  main-bg"
+          className="dark:bg-main-bg h-screen sm:h-screen  "
           id="experiencepage"
         >
           {/* Desktop view */}
           <animated.div
             style={{ ...springs[0] }}
-            className="text-bold hidden md:block text-white font-sans font-bold uppercase text-4xl sm:text-5xl ml-12 mt-12"
+            className=" ml-24 text-bold dark:text-white text-gray-500 font-sans font-bold uppercase text-4xl sm:text-5xl pt-12"
           >
             <Typewriter
               onInit={(typewriter) => {
                 typewriter
                   .typeString(
-                    '<span style="color: #66b2b2; font-size: 45px;">010.<br /></span> <span style="font-size: 85px;">Experience</span>'
-                  )
-                  .start();
-              }}
-            />
-          </animated.div>
-
-          {/* Mobile view */}
-          <animated.div
-            style={{ ...springs[0] }}
-            className="text-bold md:hidden text-white font-sans font-bold uppercase text-4xl sm:text-5xl ml-12 mt-12"
-          >
-            <Typewriter
-              onInit={(typewriter) => {
-                typewriter
-                  .typeString(
-                    '<span style="color: #66b2b2; font-size: 25px; margin-bottom: 10px;">010.<br /></span> <span style="font-size: 50px;">Experience</span>'
+                    '<span style="color: #66b2b2; font-size: 45px;">011.<br /></span> <span style="font-size: 85px;">Experience</span>'
                   )
                   .start();
               }}

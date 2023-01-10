@@ -1,56 +1,28 @@
 import * as React from "react";
-import AboutMeView from "../components/about_me/AboutMe";
+import AboutMeView from "../components/about_me/AboutMe_web";
 import LandingPageView from "../components/landing_page/LandingPage";
-import ProjectsView from "../components/projects/Projects";
-import ExperiencePageView from "../components/work/Experience";
 import ContactsPageView from "../components/contacts/contacts";
 import Seo from "../components/seo/SeoComponent";
-import { animated, useSpring } from "@react-spring/web";
-import { onMouseEvent } from "./_helper_functions";
 import NavBarComponent from "./_nav_bar";
+import DarkModeToggle from "react-dark-mode-toggle";
+import ExperiencePageView from "../components/work/Experience";
+import ProjectsView from "../components/projects/Projects";
 
 const IndexPage = () => {
   const [view, setView] = React.useState("home");
-  const [cursorPosition, setCursorPosition] = React.useState({
-    x: 0,
-    y: 0,
-  });
+  const [darkMode, setDarkMode] = React.useState(false);
 
-  const [cursorVariant, setCursorVariant] = React.useState("default");
-
-  const [_mouseSprings, _mouseApi] = useSpring(() => ({
-    from: {
-      height: 36,
-      width: 36,
-      x: 0,
-      y: 0,
-      backgroundColor: "white",
-      mixBlendMode: "normal",
-    },
-  }));
-
-  const mouseEventListener = (e: any) =>
-    setCursorPosition({
-      x: e.clientX,
-      y: e.clientY,
-    });
-
-  React.useEffect(() => {
-    onMouseEvent(_mouseApi, cursorVariant, cursorPosition);
-  }, [cursorPosition]);
-
-  React.useEffect(() => {
-    window.addEventListener("mousemove", mouseEventListener);
-    return () => {
-      window.removeEventListener("mousemove", mouseEventListener);
-    };
-  }, []);
-
-  const textEnter = () => setCursorVariant("text");
-  const textLeave = () => setCursorVariant("default");
-
-  const menuTextEnter = () => setCursorVariant("menutext");
-  const menuTextLeave = () => setCursorVariant("default");
+  const setDarkModeLocal = (new_value: boolean) => {
+    if (localStorage.theme === "dark") {
+      document.documentElement.classList.add("dark");
+      localStorage.theme = "light";
+      setDarkMode(true);
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.theme = "dark";
+      setDarkMode(false);
+    }
+  };
 
   return (
     <div className="">
@@ -68,27 +40,21 @@ const IndexPage = () => {
         }}
       />
 
-      {/* <NavBarView setView={setView} /> */}
-      <animated.div
-        style={{ ..._mouseSprings }}
-        className="fixed z-50 rounded-full pointer-events-none"
-      ></animated.div>
+      <NavBarComponent setView={setView} />
 
-      <NavBarComponent
-        customMouseEnter={menuTextEnter}
-        customMouseLeave={menuTextLeave}
-      />
+      <div className="fixed w-9 h-9 right-40 top-3">
+        <DarkModeToggle
+          onChange={setDarkModeLocal}
+          checked={darkMode}
+          size={80}
+        />
+      </div>
 
-      <LandingPageView
-        view={view}
-        setView={setView}
-        customMouseEnter={textEnter}
-        customMouseLeave={textLeave}
-      />
+      <LandingPageView view={view} setView={setView} />
 
       <AboutMeView view={view} />
-      {/* <ExperiencePageView view={view} /> */}
-      {/* <ProjectsView view={view} /> */}
+      <ExperiencePageView view={view} />
+      <ProjectsView view={view} />
       <ContactsPageView view={view} />
     </div>
   );

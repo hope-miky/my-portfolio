@@ -1,8 +1,8 @@
 import React from "react";
 import { animated, useSprings } from "@react-spring/web";
-import { MenuAlt2Icon, ArrowRightIcon } from "@heroicons/react/outline";
+import { MenuAlt2Icon } from "@heroicons/react/outline";
 
-function NavBarComponent({ customMouseEnter, customMouseLeave }: any) {
+function NavBarComponent({ setView }: any) {
   const bg_colors = ["bg-amber-400", "bg-red-400", "bg-blue-400"];
   const [_springs, _apis] = useSprings(bg_colors.length + 1, (index) => ({
     from: {
@@ -42,7 +42,7 @@ function NavBarComponent({ customMouseEnter, customMouseLeave }: any) {
     <div className="flex">
       <MenuAlt2Icon
         onClick={moveNavBar}
-        className="fixed right-0 mt-12 mr-12 h-10 w-10 text-amber-500 "
+        className="fixed right-0 top-3  mr-12 h-10 w-10 text-teal-900 hover:cursor-pointer "
       />
       {bg_colors.map((color: string, idx: number) => {
         return (
@@ -58,24 +58,23 @@ function NavBarComponent({ customMouseEnter, customMouseLeave }: any) {
         style={{ ..._springs[bg_colors.length] }}
         className="fixed w-3/4 h-screen z-40 bg-teal-100 "
       >
-        <ArrowRightIcon
+        <button
           onClick={revertNavBar}
-          className="fixed left-0 mt-12 ml-12 h-20 w-20 text-amber-800 "
-        />
+          className=" fixed left-0 mt-12 ml-12 px-5 py-2 font-medium border border-b-4 border-r-4 border-black rounded-lg shadow-lg hover:shadow-sm hover:border-b-2 hover:border-r-2"
+        >
+          Return
+        </button>
 
         <div className="fixed flex flex-col justify-center mt-40 w-1/2 ">
           {menu_values.map((menu_text: string, idx: number) => {
             return (
               <div
                 key={idx}
-                className="text-7xl font-thin text-center py-5 w-full hover:font-bold hover:text-white hover:rounded-r-full hover:bg-main-bg hover:border-y-2 "
+                onClick={() => setView(menu_text)}
+                className=" hover:border hover:border-l-0 hover:border-b-4  hover:border-black hover:rounded-lg hover:shadow-lg 
+                hover:cursor-pointer text-7xl font-thin text-center py-5 w-full hover:font-bold dark:hover:text-white hover:text-main-bg/70 hover:rounded-r-full dark:hover:bg-main-bg hover:bg-white hover:border-y-2 "
               >
-                <span
-                  onMouseEnter={customMouseEnter}
-                  onMouseLeave={customMouseLeave}
-                >
-                  {menu_text}
-                </span>
+                <span>{menu_text}</span>
               </div>
             );
           })}

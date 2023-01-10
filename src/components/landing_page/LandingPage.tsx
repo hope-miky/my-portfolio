@@ -2,7 +2,7 @@ import { animated, useSpring, useSprings } from "@react-spring/web";
 import React, { useEffect, useState } from "react";
 import Typewriter, { TypewriterClass } from "typewriter-effect";
 
-const LandingPageView = ({ view, customMouseEnter, customMouseLeave }: any) => {
+const LandingPageView = ({ view }: any) => {
   const [display, setDisplay] = useState(true);
 
   const [first_spring, first_api] = useSprings(5, (index) => ({
@@ -53,22 +53,17 @@ const LandingPageView = ({ view, customMouseEnter, customMouseLeave }: any) => {
   return (
     <>
       {display && (
-        <div className=" first-screen h-screen pb-36 flex flex-wrap flex-col justify-end main-bg">
-          <div className=" w-4/5 sm:w-4/5 ml-12 mb-12  ">
+        <div className=" w-screen h-screen pb-36 flex flex-wrap flex-col justify-center dark:bg-main-bg ">
+          <div className=" w-4/5 sm:w-4/5 ml-52  ">
             <animated.div style={{ ...first_spring[0] }}>
-              <div className="font-mono sm:text-3xl text-teal-400 my-2 ">
+              <div className="font-mono font-bold sm:text-3xl text-gray-500 my-2  ">
                 Hi :) I am
               </div>
             </animated.div>
 
             <animated.div style={{ ...first_spring[1] }}>
-              <div className=" text-3xl sm:text-3xl md:text-5xl lg:text-9xl font-bold font-sans text-gray-200 md:my-1">
-                <span
-                  onMouseEnter={customMouseEnter}
-                  onMouseLeave={customMouseLeave}
-                >
-                  Tesfamichael
-                </span>
+              <div className=" text-3xl sm:text-3xl md:text-5xl lg:text-9xl font-bold font-sans dark:text-gray-200 text-teal-600 md:my-1">
+                <span>Tesfamichael</span>
               </div>
             </animated.div>
 
