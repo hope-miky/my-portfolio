@@ -9,7 +9,8 @@ module.exports = {
     extend: {
       colors: {
         'main-teal': '#112340',
-        'main-bg': 'rgb(11,25,46)'
+        'main-bg': 'rgb(11,25,46)',
+        'second-bg': '#112340'
       },
       animation: {
         border: 'border 4s ease infinite',

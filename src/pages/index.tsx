@@ -9,7 +9,7 @@ import ExperiencePageView from "../components/work/Experience";
 import ProjectsView from "../components/projects/Projects";
 
 const IndexPage = () => {
-  const [view, setView] = React.useState("home");
+  const [view, setView] = React.useState("Home");
   const [darkMode, setDarkMode] = React.useState(false);
 
   const setDarkModeLocal = (new_value: boolean) => {
@@ -25,7 +25,7 @@ const IndexPage = () => {
   };
 
   return (
-    <div className="">
+    <div className="dark:bg-main-bg ">
       <Seo
         title="Tesfamichael Molla"
         description="Hello, I am Tesfamichael Molla, BH Full-stack developer based in Poland."

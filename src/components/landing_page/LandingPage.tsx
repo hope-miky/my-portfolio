@@ -27,7 +27,7 @@ const LandingPageView = ({ view }: any) => {
   };
 
   useEffect(() => {
-    if (view === "home") {
+    if (view === "Home") {
       setDisplay(true);
       first_api.start((index) => ({
         to: {
@@ -54,7 +54,7 @@ const LandingPageView = ({ view }: any) => {
     <>
       {display && (
         <div className=" w-screen h-screen pb-36 flex flex-wrap flex-col justify-center dark:bg-main-bg ">
-          <div className=" w-4/5 sm:w-4/5 ml-52  ">
+          <div className=" w-4/5 sm:w-4/5 sm:ml-52 ml-10  ">
             <animated.div style={{ ...first_spring[0] }}>
               <div className="font-mono font-bold sm:text-3xl text-gray-500 my-2  ">
                 Hi :) I am

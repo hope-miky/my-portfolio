@@ -52,13 +52,29 @@ const ExperiencePageView = ({ view }: any) => {
           {/* Desktop view */}
           <animated.div
             style={{ ...springs[0] }}
-            className=" ml-24 text-bold dark:text-white text-gray-500 font-sans font-bold uppercase text-4xl sm:text-5xl pt-12"
+            className=" ml-24 hidden sm:block text-bold dark:text-white text-gray-500 font-sans font-bold uppercase text-4xl sm:text-5xl pt-12"
           >
             <Typewriter
               onInit={(typewriter) => {
                 typewriter
                   .typeString(
                     '<span style="color: #66b2b2; font-size: 45px;">011.<br /></span> <span style="font-size: 85px;">Experience</span>'
+                  )
+                  .start();
+              }}
+            />
+          </animated.div>
+
+          {/* Mobile view */}
+          <animated.div
+            style={{ ...springs[0] }}
+            className=" ml-8 sm:hidden text-bold dark:text-white text-gray-500 font-sans font-bold uppercase text-4xl sm:text-5xl pt-12"
+          >
+            <Typewriter
+              onInit={(typewriter) => {
+                typewriter
+                  .typeString(
+                    '<span style="color: #66b2b2; font-size: 45px;">011.<br /></span> <span style="font-size: 55px;">Experience</span>'
                   )
                   .start();
               }}

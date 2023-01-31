@@ -14,7 +14,7 @@ const ContactsPageView = ({ view }: any) => {
   }));
 
   useEffect(() => {
-    if (view === "contacts") {
+    if (view === "Contacts") {
       setTimeout(() => {
         setDisplay(true);
         apis.start((index) => ({
@@ -43,33 +43,32 @@ const ContactsPageView = ({ view }: any) => {
     <>
       {display && (
         <div
-          className=" first-screen pb-36 w-screen main-bg sm:mt-24 fixed "
+          className=" h-screen w-screen dark:bg-main-bg sm:pt-24  "
           id="contactspage"
         >
-          {/* <animated.div style={{...springs[0]}}>
-                <button className="mt-5 ml-12 text-bold text-white font-sans font-bold uppercase text-4xl sm:text-5xl "> <span className="text-teal-400 font-bold mr-2">100.</span> Contacts </button>
-                <hr className=' sm:w-1/2 w-5/6 sm:mt-2' />
-            </animated.div> */}
-
-          {/* <FlipMove></FlipMove> */}
-
-          <div className=" flex flex-wrap justify-center mt-24 ">
+          <div className=" flex flex-wrap justify-center pt-24 ">
             <animated.div
               style={{ ...springs[1] }}
               className="flex flex-col justify-center w-full sm:w-1/4  mx-12 mb-10 "
             >
-              <div className="text-white text-xl  "> Poznan, Poland </div>
-              <div className="text-white text-xl  "> +48223072405 </div>
+              <div className="dark:text-white text-xl text-gray-500 ">
+                {" "}
+                Poznan, Poland{" "}
+              </div>
+              <div className="dark:text-white text-gray-700 text-xl  ">
+                {" "}
+                +48692079416{" "}
+              </div>
               <a
                 href="mailto:hope.mikypl@gmail.com"
-                className="  text-teal-400 text-md font-mono hover:underline hover:font-bold hover:cursor-pointer"
+                className="  text-teal-600 text-md font-mono hover:underline hover:font-bold hover:cursor-pointer"
               >
                 {" "}
                 hope.mikypl@gmail.com{" "}
               </a>
               <a
                 href="mailto:hope.miky1074@gmail.com"
-                className="  text-teal-400 text-md font-mono hover:underline hover:font-bold hover:cursor-pointer"
+                className="  text-teal-600 text-md font-mono hover:underline hover:font-bold hover:cursor-pointer"
               >
                 {" "}
                 hope.miky1074@gmail.com{" "}
@@ -79,7 +78,7 @@ const ContactsPageView = ({ view }: any) => {
             <div className="flex flex-col justify-center sm:w-1/3 mx-5 ">
               <animated.div
                 style={{ ...springs[2] }}
-                className=" text-center mb-5 text-xl text-gray-400 font-thin "
+                className=" text-center mb-5 text-xl dark:text-gray-400 text-gray-500 font-bold font-sans "
               >
                 {" "}
                 I am not actively looking for a new role but I am open for
@@ -90,6 +89,9 @@ const ContactsPageView = ({ view }: any) => {
                 style={{ ...springs[3] }}
                 className="flex justify-center"
               >
+                {/* <button className=" mx-3 px-5 py-2 font-medium border border-b-4 border-r-4 text-amber-600 border-amber-400 rounded-lg shadow-lg hover:shadow-sm hover:border-b-2 hover:border-r-2">
+                  Linke
+                </button> */}
                 <SocialIcon
                   className="mx-3 hover:-translate-y-1 "
                   url="https://www.linkedin.com/in/tesfamichael-molla-989236171/"
@@ -98,7 +100,7 @@ const ContactsPageView = ({ view }: any) => {
                 <SocialIcon
                   className="mx-3 hover:-translate-y-1 "
                   url="https://github.com/hope-miky"
-                  bgColor="white"
+                  bgColor="gray"
                 />
                 <SocialIcon
                   className="mx-3 hover:-translate-y-1 "
@@ -108,7 +110,7 @@ const ContactsPageView = ({ view }: any) => {
                 <SocialIcon
                   className="mx-3 hover:-translate-y-1 "
                   url="https://medium.com/@hope.miky1074"
-                  bgColor="white"
+                  bgColor="teal"
                 />
                 <SocialIcon
                   className="mx-3 hover:-translate-y-1 "
@@ -122,7 +124,7 @@ const ContactsPageView = ({ view }: any) => {
 
           {/* Desktop view */}
           <animated.div
-            className=" hidden md:block text-bold text-white font-sans font-bold uppercase text-4xl sm:text-5xl md:mt-48 ml-12"
+            className=" hidden md:block text-bold dark:text-white text-gray-500 font-sans font-bold uppercase text-4xl sm:text-5xl md:mt-48 ml-12"
             style={{ ...springs[0] }}
           >
             <Typewriter
@@ -130,22 +132,6 @@ const ContactsPageView = ({ view }: any) => {
                 typewriter
                   .typeString(
                     '<span style="color: #66b2b2; font-size: 45px;">100.<br /></span> <span style="font-size: 85px;">Contacts</span>'
-                  )
-                  .start();
-              }}
-            />
-          </animated.div>
-
-          {/* Mobile view */}
-          <animated.div
-            className=" md:hidden  text-bold text-white font-sans font-bold uppercase text-4xl sm:text-5xl mt-12 md:mt-48 ml-12"
-            style={{ ...springs[0] }}
-          >
-            <Typewriter
-              onInit={(typewriter) => {
-                typewriter
-                  .typeString(
-                    '<span style="color: #66b2b2; font-size: 25px;">100.<br /></span> <span style="font-size: 50px;">Contacts</span>'
                   )
                   .start();
               }}

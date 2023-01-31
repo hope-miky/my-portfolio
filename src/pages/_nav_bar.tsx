@@ -6,7 +6,7 @@ function NavBarComponent({ setView }: any) {
   const bg_colors = ["bg-amber-400", "bg-red-400", "bg-blue-400"];
   const [_springs, _apis] = useSprings(bg_colors.length + 1, (index) => ({
     from: {
-      x: 2000,
+      x: -2000,
       y: 0,
     },
   }));
@@ -22,7 +22,7 @@ function NavBarComponent({ setView }: any) {
   const moveNavBar = () => {
     _apis.start((index) => ({
       to: {
-        x: 1000,
+        x: 0,
       },
       delay: index * 100,
     }));
@@ -31,7 +31,7 @@ function NavBarComponent({ setView }: any) {
   const revertNavBar = () => {
     _apis.start((index) => ({
       to: {
-        x: 2000,
+        x: -2000,
         y: 0,
       },
       delay: (4 - index) * 100,
@@ -49,7 +49,7 @@ function NavBarComponent({ setView }: any) {
           <animated.div
             key={idx}
             style={{ ..._springs[idx] }}
-            className={`fixed w-screen h-screen z-${(idx + 1) * 10} ${color}`}
+            className={`fixed w-3/4 h-screen z-${(idx + 1) * 10} ${color}`}
           />
         );
       })}
@@ -65,14 +65,14 @@ function NavBarComponent({ setView }: any) {
           Return
         </button>
 
-        <div className="fixed flex flex-col justify-center mt-40 w-1/2 ">
+        <div className="fixed flex flex-col justify-center mt-40 w-3/4 ">
           {menu_values.map((menu_text: string, idx: number) => {
             return (
               <div
                 key={idx}
                 onClick={() => setView(menu_text)}
-                className=" hover:border hover:border-l-0 hover:border-b-4  hover:border-black hover:rounded-lg hover:shadow-lg 
-                hover:cursor-pointer text-7xl font-thin text-center py-5 w-full hover:font-bold dark:hover:text-white hover:text-main-bg/70 hover:rounded-r-full dark:hover:bg-main-bg hover:bg-white hover:border-y-2 "
+                className=" hover:border hover:border-r-0 hover:border-b-4  hover:border-black hover:rounded-lg hover:shadow-lg 
+                hover:cursor-pointer text-2xl sm:text-7xl font-thin text-center py-5 w-full hover:font-bold dark:hover:text-white hover:text-main-bg/70 hover:rounded-l-full dark:hover:bg-main-bg hover:bg-white hover:border-y-2 "
               >
                 <span>{menu_text}</span>
               </div>
