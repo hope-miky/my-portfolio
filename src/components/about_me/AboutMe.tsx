@@ -132,7 +132,7 @@ const AboutMeView = ({ view }: any) => {
                   </p>
                 </div>
               </div>
-              <div className=" flex-1 md:flex justify-center hidden md:visible ">
+              {/* <div className=" flex-1 md:flex justify-center hidden md:visible ">
                 <div className="flex-1 flex flex-col justify-center ">
                   <div className=" fixed">
                     <CircularImagesComponent />
@@ -143,7 +143,7 @@ const AboutMeView = ({ view }: any) => {
                     alt="A dinosaur"
                   />
                 </div>
-              </div>
+              </div> */}
             </div>
           </animated.div>
         </div>

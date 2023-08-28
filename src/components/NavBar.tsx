@@ -107,7 +107,7 @@ const NavBarView = ( {setView} : any) => {
               <a className="closebtn text-teal-500" onClick={closeNav}>&times;</a>
               <div className=" flex flex-col inset-y-0 right-0 pl-5 items-start pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                     <a onClick={() => setView('home')} className="hover:cursor-pointer text-bold text-white font-sans text-sm my-4 land2"> <span className="text-teal-400 font-bold mr-2">000.</span> Home </a>
-                    <a onClick={() => setView('about')} className="hover:cursor-pointer text-bold text-white font-sans text-sm my-4 land2"> <span className="text-teal-400 font-bold mr-2">001.</span> About Me </a>
+                     <a onClick={() => setView('about')} className="hover:cursor-pointer text-bold text-white font-sans text-sm my-4 land2"> <span className="text-teal-400 font-bold mr-2">001.</span> About Me </a>
                     <a onClick={() => setView('experience')} className="hover:cursor-pointer text-bold text-white font-sans text-sm my-4 land3"> <span className="text-teal-400 font-bold mr-2">010.</span> Experience </a>
                     <a onClick={() => setView('projects')}  className="hover:cursor-pointer text-bold text-white font-sans text-sm my-4 land4"> <span className="text-teal-400 font-bold mr-2">011.</span> Projects </a>
                     <a onClick={() => setView('contacts')}  className="hover:cursor-pointer text-bold text-white font-sans text-sm my-4 land4"> <span className="text-teal-400 font-bold mr-2">100.</span> Contacts </a>

@@ -77,6 +77,7 @@ const IndexPage = () => {
       <NavBarComponent
         customMouseEnter={menuTextEnter}
         customMouseLeave={menuTextLeave}
+        setView={setView}
       />
 
       <LandingPageView
@@ -87,8 +88,8 @@ const IndexPage = () => {
       />
 
       <AboutMeView view={view} />
-      {/* <ExperiencePageView view={view} /> */}
-      {/* <ProjectsView view={view} /> */}
+      <ExperiencePageView view={view} />
+      <ProjectsView view={view} />
       <ContactsPageView view={view} />
     </div>
   );

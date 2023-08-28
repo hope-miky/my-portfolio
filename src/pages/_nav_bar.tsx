@@ -2,7 +2,7 @@ import React from "react";
 import { animated, useSprings } from "@react-spring/web";
 import { MenuAlt2Icon, ArrowRightIcon } from "@heroicons/react/outline";
 
-function NavBarComponent({ customMouseEnter, customMouseLeave }: any) {
+function NavBarComponent({ customMouseEnter, customMouseLeave, setView }: any) {
   const bg_colors = ["bg-amber-400", "bg-red-400", "bg-blue-400"];
   const [_springs, _apis] = useSprings(bg_colors.length + 1, (index) => ({
     from: {
@@ -11,12 +11,35 @@ function NavBarComponent({ customMouseEnter, customMouseLeave }: any) {
     },
   }));
 
-  const menu_values = [
-    "Home",
-    "About Me",
-    "Experience",
-    "Projects",
-    "Contacts",
+  // const menu_values = [
+  //   "Home",
+  //   "About Me",
+  //   "Experience",
+  //   "Projects",
+  //   "Contacts",
+  // ];
+
+  const sideMenuValues = [
+    {
+      name: "Home",
+      value: "home",
+    },
+    {
+      name: "About Me",
+      value: "about",
+    },
+    {
+      name: "Experience",
+      value: "experience",
+    },
+    {
+      name: "Projects",
+      value: "projects",
+    },
+    {
+      name: "Contacts",
+      value: "contacts",
+    }
   ];
 
   const moveNavBar = () => {
@@ -64,17 +87,18 @@ function NavBarComponent({ customMouseEnter, customMouseLeave }: any) {
         />
 
         <div className="fixed flex flex-col justify-center mt-40 w-1/2 ">
-          {menu_values.map((menu_text: string, idx: number) => {
+          {sideMenuValues.map((menu_text: Record<string, string>, idx: number) => {
             return (
               <div
-                key={idx}
+                key={menu_text.value}
+                onClick={() => setView(menu_text.value)}
                 className="text-7xl font-thin text-center py-5 w-full hover:font-bold hover:text-white hover:rounded-r-full hover:bg-main-bg hover:border-y-2 "
               >
                 <span
                   onMouseEnter={customMouseEnter}
                   onMouseLeave={customMouseLeave}
                 >
-                  {menu_text}
+                  {menu_text.name}
                 </span>
               </div>
             );
