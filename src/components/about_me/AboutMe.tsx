@@ -1,8 +1,5 @@
-import { StaticImage } from "gatsby-plugin-image";
 import React, { useEffect, useState } from "react";
 import { animated, useSpring } from "@react-spring/web";
-import CircularImagesComponent from "./CircularImages";
-import { BrowserView, MobileView } from "react-device-detect";
 import Typewriter from "typewriter-effect";
 
 const AboutMeView = ({ view }: any) => {
@@ -43,7 +40,7 @@ const AboutMeView = ({ view }: any) => {
     <>
       {display && (
         <div
-          className=" main-bg sm:py-32 md:py-0 w-screen flex flex-col justify-start "
+          className=" main-bg sm:py-32 w-screen md:w-1/2 md:m-auto flex flex-col justify-start"
           id="aboutmepage"
         >
           <animated.div
@@ -86,7 +83,7 @@ const AboutMeView = ({ view }: any) => {
               ...springs,
             }}
           >
-            <div className="flex flex-row w-screen mx-auto pb-24">
+            <div className="flex flex-row mx-auto pb-24">
               <div className=" flex-1">
                 <div className=" flex-col px-12 sm:px-40 min-w-min ">
                   <p className=" font-sans text-gray-200 my-4 text-justify ">
@@ -132,18 +129,6 @@ const AboutMeView = ({ view }: any) => {
                   </p>
                 </div>
               </div>
-              {/* <div className=" flex-1 md:flex justify-center hidden md:visible ">
-                <div className="flex-1 flex flex-col justify-center ">
-                  <div className=" fixed">
-                    <CircularImagesComponent />
-                  </div>
-                  <StaticImage
-                    className="ml-24 mt-24 w-64 border-2 rounded-full border-teal-500 p-5  "
-                    src="../../assets/images/profile.jpeg"
-                    alt="A dinosaur"
-                  />
-                </div>
-              </div> */}
             </div>
           </animated.div>
         </div>
