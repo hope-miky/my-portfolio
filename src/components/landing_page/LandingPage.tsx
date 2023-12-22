@@ -67,16 +67,6 @@ const LandingPageView = ({ setView, view }: any) => {
 
             <animated.div style={{ ...first_spring[2] }}>
               <div className="text-2xl lg:text-7xl md:text-4xl sm:text-3xl text-gray-400 font-sans font-bold my-4 md:my-1">
-                {/* I build 
-                    <span className="text-amber-400 font-bold "> <Typewriter
-                        options={{
-                            strings: ['web', 'mobile'],
-                            autoStart: true,
-                            loop: true,
-                        }}
-                        /> </span>
-                    
-                    apps!  */}
                 <Typewriter
                   onInit={(typewriter) => {
                     typewriter
@@ -85,23 +75,8 @@ const LandingPageView = ({ setView, view }: any) => {
                         'I build <span style="color: #FFBF00;"> web </span> apps :'
                       )
                       .start();
-                    //   .pauseFor(1000)
-                    //   .deleteChars(6)
-                    //
-                    //   .typeString(
-                    //     ' and <span style="color: #FFBF00;"> mobile </span> apps!'
-                    //   );
                   }}
                 />
-              </div>
-            </animated.div>
-
-            <animated.div style={{ ...first_spring[3] }}>
-              <div className=" text-xs sm:text-xs md:text-sm lg:text-lg text-gray-400 sm:w-3/5 font-thin font-mono my-4">
-                I am a full-stack developer specializing in building customer
-                focused web ( sometimes mobile ) applications. Currently, I’m
-                focused on building USSD mobile banking and Fraud Management
-                systems at Equity Bank Limited.
               </div>
             </animated.div>
 
@@ -111,9 +86,9 @@ const LandingPageView = ({ setView, view }: any) => {
                   onClick={() => setView("contacts")}
                   className=" hover:cursor-pointer mt-3 inline-block animate-border rounded-xl bg-white from-main-teal via-purple-500 to-main-teal bg-[length:400%_400%] p-0.5 transition hover:bg-gradient-to-r hover:shadow-lg focus:outline-none focus:ring"
                 >
-                  <span className="block rounded-[11px] bg-slate-900 px-10 py-4 text-xl text-white">
+                  <span className="block rounded-[11px] bg-slate-900 px-10 py-2 text-l text-white">
                     {" "}
-                    Contact me{" "}
+                    Lets chat :){" "}
                   </span>
                 </a>
               </div>

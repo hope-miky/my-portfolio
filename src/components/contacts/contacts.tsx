@@ -46,12 +46,6 @@ const ContactsPageView = ({ view }: any) => {
           className=" first-screen pb-36 w-screen main-bg sm:mt-24 fixed "
           id="contactspage"
         >
-          {/* <animated.div style={{...springs[0]}}>
-                <button className="mt-5 ml-12 text-bold text-white font-sans font-bold uppercase text-4xl sm:text-5xl "> <span className="text-teal-400 font-bold mr-2">100.</span> Contacts </button>
-                <hr className=' sm:w-1/2 w-5/6 sm:mt-2' />
-            </animated.div> */}
-
-          {/* <FlipMove></FlipMove> */}
 
           <div className=" flex flex-wrap justify-center mt-24 ">
             <animated.div
@@ -82,8 +76,7 @@ const ContactsPageView = ({ view }: any) => {
                 className=" text-center mb-5 text-xl text-gray-400 font-thin "
               >
                 {" "}
-                I am not actively looking for a new role but I am open for
-                discussion :){" "}
+                Lets chat :){" "}
               </animated.div>
 
               <animated.div
@@ -104,11 +97,6 @@ const ContactsPageView = ({ view }: any) => {
                   className="mx-3 hover:-translate-y-1 "
                   url="https://twitter.com/hopemichael1074"
                   fgColor="white"
-                />
-                <SocialIcon
-                  className="mx-3 hover:-translate-y-1 "
-                  url="https://medium.com/@hope.miky1074"
-                  bgColor="white"
                 />
                 <SocialIcon
                   className="mx-3 hover:-translate-y-1 "

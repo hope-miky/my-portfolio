@@ -12,7 +12,21 @@ export interface IProject {
 
 
 const projects: Array<IProject> = [
-
+    {
+        name: "Payability Onboarding",
+        description: "Enhancing User Experience through with a new onboarding process for Payability.",
+        details: <>I undertook comprehensive modifications and maintenance of the onboarding web application. Focused on elevating user experience by introducing intuitive interfaces and streamlined processes.</>,
+        frameworks: [ 'Angular 12', 'Python', 'Flask' ],
+        link: "https://onboarding.payability.com/"
+    },
+    {
+        name: "Payability Supplier Dashboard",
+        description: "Revolutionizing User Interaction with Feature-Rich Upgrades",
+        details: <>Spearheaded the modification, introduction of new features, and maintenance of the supplier dashboard.
+        Aimed at significantly improving user experience through innovative design and functionality enhancements.</>,
+        frameworks: [ 'Angular 12', 'Python', 'Flask' ],
+        link: "https://supplier4.payability.com/"
+    },
     {
         name: "Case Manager",
         description: " Case manager is a web app to manage fraud transactions and take action. It is being used by Equity bank fraud analysts.",

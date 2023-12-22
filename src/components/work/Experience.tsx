@@ -86,7 +86,7 @@ const ExperiencePageView = ({ view }: any) => {
                   return (
                     <animated.div
                       key={idx}
-                      className=" m-12 w-full sm:w-auto"
+                      className=" m-12 lg:mx-32 w-full sm:w-auto"
                       style={{ ...springs[idx + 1] }}
                     >
                       <div className="text-teal-400 text-8xl">0{idx + 1}</div>

@@ -55,7 +55,7 @@ const NavBarView = ( {setView} : any) => {
 
             <div className="relative  items-center justify-between h-16 hidden sm:flex  ">
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start" >
-                <animated.div onMouseOver={() => animteText()} className=" text-teal-500 font-bold land2" style={{...spring}} >@hope_miky</animated.div>
+                <animated.div onMouseOver={() => animteText()} className=" text-teal-500 font-bold land2" style={{...spring}} >Tesfamichael</animated.div>
               </div>
 
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
@@ -93,7 +93,7 @@ const NavBarView = ( {setView} : any) => {
 
             <div className="items-center justify-between h-16 sm:hidden flex  ">
               <div className="flex-1 flex items-center justify-start sm:items-stretch pl-5 sm:pl-0">
-                <div className=" text-teal-500 font-bold land2">@hope_miky</div>
+                <div className=" text-teal-500 font-bold land2">Tesfamichael</div>
               </div>
 
               <div className=" inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
